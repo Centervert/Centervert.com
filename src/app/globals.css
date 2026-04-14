@@ -1,26 +1,464 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =========================================================================
+   FONTS
+   Effra (sans, UI + body) and Recia (variable serif, display).
+   Loaded from public/brand/fonts. Older /fonts/* paths retained for any
+   component still referencing them during migration.
+   ========================================================================= */
+
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_Th.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_Hair.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_Lt.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_Rg.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_It.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_Md.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_SBd.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_Bd.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_BdIt.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_XBd.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Effra";
+  src: url("/brand/fonts/Effra_Blk.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recia";
+  src: url("/brand/fonts/Recia-Variable.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Recia";
+  src: url("/brand/fonts/Recia-VariableItalic.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* =========================================================================
+   DESIGN TOKENS
+   ========================================================================= */
+
+:root {
+  /* Core surfaces */
+  --background: #F7F7F2;
+  --foreground: #0F0F0F;
+
+  /* Fonts */
+  --font-effra: "Effra", ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-recia: "Recia", ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, "JetBrains Mono", Menlo, Monaco, "Courier New", monospace;
+
+  /* Brand colors */
+  --evergreen: #013220;
+  --highlight: #C0FF00;
+  --royal: #2454FF;
+  --smoke: #F7F7F2;
+  --cv-white: #FFFFFF;
+  --cv-black: #0F0F0F;
+
+  /* Evergreen ramp (cool-tinted, sits in brand family) */
+  --evergreen-50:  #EDF3EF;
+  --evergreen-100: #D4E3D9;
+  --evergreen-200: #A8C6B3;
+  --evergreen-300: #78A78B;
+  --evergreen-400: #4A8A67;
+  --evergreen-500: #236D49;
+  --evergreen-600: #0E5233;
+  --evergreen-700: #013220;
+  --evergreen-800: #012718;
+  --evergreen-900: #001A10;
+  --evergreen-950: #000D08;
+
+  /* Highlight ramp (neon lime) */
+  --highlight-50:  #F6FFDA;
+  --highlight-100: #EAFFAD;
+  --highlight-200: #D6FF6B;
+  --highlight-300: #C0FF00;
+  --highlight-400: #A6DF00;
+  --highlight-500: #87B500;
+  --highlight-600: #688C00;
+  --highlight-700: #4D6800;
+  --highlight-800: #344700;
+  --highlight-900: #1F2A00;
+
+  /* Royal ramp */
+  --royal-50:  #EBF0FF;
+  --royal-100: #D1DCFF;
+  --royal-200: #A5B8FF;
+  --royal-300: #7A94FF;
+  --royal-400: #4E70FF;
+  --royal-500: #2454FF;
+  --royal-600: #1A40D6;
+  --royal-700: #112EAA;
+  --royal-800: #0A1F7A;
+  --royal-900: #061452;
+  --royal-950: #030A2E;
+
+  /* Cool-tinted neutrals (gray with the faintest evergreen bias) */
+  --gray-50:  #F7F8F6;
+  --gray-100: #EEF1EE;
+  --gray-200: #E0E4E0;
+  --gray-300: #C7CDC6;
+  --gray-400: #9CA39A;
+  --gray-500: #6E746C;
+  --gray-600: #4E534C;
+  --gray-700: #3A3F38;
+  --gray-800: #262A24;
+  --gray-900: #151814;
+  --gray-950: #0A0C09;
+
+  /* Gradients */
+  --gradient-mesh-light:
+    radial-gradient(at 10% 0%, rgba(192, 255, 0, 0.18) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(36, 84, 255, 0.16) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(1, 50, 32, 0.12) 0px, transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #F7F7F2 100%);
+  --gradient-mesh-dark:
+    radial-gradient(at 20% 10%, rgba(36, 84, 255, 0.35) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, rgba(192, 255, 0, 0.18) 0px, transparent 45%),
+    radial-gradient(at 50% 100%, rgba(1, 50, 32, 0.6) 0px, transparent 60%),
+    linear-gradient(180deg, #001A10 0%, #000D08 100%);
+  --gradient-cta-glow: radial-gradient(circle at 50% 100%, rgba(192, 255, 0, 0.35) 0%, transparent 60%);
+
+  /* Typography scale */
+  --text-display-2xl: 5.5rem;  /* 88px */
+  --text-display-xl:  4.5rem;  /* 72px */
+  --text-display-lg:  3.75rem; /* 60px */
+  --text-h1: 3rem;             /* 48px */
+  --text-h2: 2.25rem;          /* 36px */
+  --text-h3: 1.75rem;          /* 28px */
+  --text-h4: 1.375rem;         /* 22px */
+  --text-body-lg: 1.125rem;    /* 18px */
+  --text-body: 1rem;           /* 16px */
+  --text-body-sm: 0.875rem;    /* 14px */
+  --text-eyebrow: 0.75rem;     /* 12px */
+
+  --leading-display: 1.04;
+  --leading-h1: 1.08;
+  --leading-h2: 1.15;
+  --leading-h3: 1.25;
+  --leading-body: 1.6;
+
+  --tracking-display: -0.02em;
+  --tracking-h1: -0.02em;
+  --tracking-h2: -0.015em;
+  --tracking-eyebrow: 0.14em;
+
+  /* Spacing (4px base grid) */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Shadows (tinted, layered, Stripe-style) */
+  --shadow-1: 0 1px 2px rgba(15, 15, 15, 0.04), 0 1px 3px rgba(15, 15, 15, 0.06);
+  --shadow-2: 0 2px 4px rgba(15, 15, 15, 0.04), 0 4px 12px rgba(15, 15, 15, 0.08);
+  --shadow-3: 0 4px 8px rgba(15, 15, 15, 0.05), 0 12px 28px rgba(15, 15, 15, 0.10);
+  --shadow-4: 0 8px 16px rgba(15, 15, 15, 0.06), 0 24px 48px rgba(15, 15, 15, 0.14);
+  --shadow-5: 0 16px 32px rgba(15, 15, 15, 0.08), 0 48px 96px rgba(15, 15, 15, 0.20);
+  --shadow-glow-highlight: 0 0 0 1px rgba(192, 255, 0, 0.12), 0 12px 40px rgba(192, 255, 0, 0.22);
+  --shadow-glow-royal: 0 0 0 1px rgba(36, 84, 255, 0.12), 0 12px 40px rgba(36, 84, 255, 0.22);
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-base: 280ms;
+  --duration-slow: 480ms;
+}
+
+/* =========================================================================
+   TAILWIND v4 @theme
+   ========================================================================= */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-effra);
+  --font-serif: var(--font-recia);
+  --font-mono: var(--font-mono);
+
+  /* Brand */
+  --color-evergreen: var(--evergreen);
+  --color-highlight: var(--highlight);
+  --color-royal: var(--royal);
+  --color-smoke: var(--smoke);
+  --color-cv-white: var(--cv-white);
+  --color-cv-black: var(--cv-black);
+
+  /* Evergreen ramp */
+  --color-evergreen-50:  var(--evergreen-50);
+  --color-evergreen-100: var(--evergreen-100);
+  --color-evergreen-200: var(--evergreen-200);
+  --color-evergreen-300: var(--evergreen-300);
+  --color-evergreen-400: var(--evergreen-400);
+  --color-evergreen-500: var(--evergreen-500);
+  --color-evergreen-600: var(--evergreen-600);
+  --color-evergreen-700: var(--evergreen-700);
+  --color-evergreen-800: var(--evergreen-800);
+  --color-evergreen-900: var(--evergreen-900);
+  --color-evergreen-950: var(--evergreen-950);
+
+  /* Highlight ramp */
+  --color-highlight-50:  var(--highlight-50);
+  --color-highlight-100: var(--highlight-100);
+  --color-highlight-200: var(--highlight-200);
+  --color-highlight-300: var(--highlight-300);
+  --color-highlight-400: var(--highlight-400);
+  --color-highlight-500: var(--highlight-500);
+  --color-highlight-600: var(--highlight-600);
+  --color-highlight-700: var(--highlight-700);
+  --color-highlight-800: var(--highlight-800);
+  --color-highlight-900: var(--highlight-900);
+
+  /* Royal ramp */
+  --color-royal-50:  var(--royal-50);
+  --color-royal-100: var(--royal-100);
+  --color-royal-200: var(--royal-200);
+  --color-royal-300: var(--royal-300);
+  --color-royal-400: var(--royal-400);
+  --color-royal-500: var(--royal-500);
+  --color-royal-600: var(--royal-600);
+  --color-royal-700: var(--royal-700);
+  --color-royal-800: var(--royal-800);
+  --color-royal-900: var(--royal-900);
+  --color-royal-950: var(--royal-950);
+
+  /* Grays */
+  --color-gray-50:  var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-400: var(--gray-400);
+  --color-gray-500: var(--gray-500);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-gray-800: var(--gray-800);
+  --color-gray-900: var(--gray-900);
+  --color-gray-950: var(--gray-950);
+
+  /* Shadows */
+  --shadow-1: var(--shadow-1);
+  --shadow-2: var(--shadow-2);
+  --shadow-3: var(--shadow-3);
+  --shadow-4: var(--shadow-4);
+  --shadow-5: var(--shadow-5);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================================
+   BASE
+   ========================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-effra);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+::selection {
+  background: var(--highlight-300);
+  color: var(--cv-black);
+}
+
+:focus-visible {
+  outline: 2px solid var(--royal-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* =========================================================================
+   TYPOGRAPHY HELPERS
+   ========================================================================= */
+
+.font-display {
+  font-family: var(--font-recia);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* =========================================================================
+   GRADIENT UTILITIES
+   ========================================================================= */
+
+.bg-mesh-light {
+  background: var(--gradient-mesh-light);
+}
+
+.bg-mesh-dark {
+  background: var(--gradient-mesh-dark);
+}
+
+.bg-cta-glow {
+  background: var(--gradient-cta-glow);
+}
+
+/* =========================================================================
+   MOTION KEYFRAMES (CSS-level, for non-JS reveals)
+   ========================================================================= */
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+.animate-fade-in-up { animation: fade-in-up 0.8s var(--ease-out-expo) forwards; }
+.animate-fade-in    { animation: fade-in 1s var(--ease-out-expo) forwards; }
+.animate-scale-in   { animation: scale-in 1s var(--ease-out-expo) forwards; }
+.animate-marquee    { animation: marquee 40s linear infinite; }
+
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-600 { animation-delay: 600ms; }
+.animation-delay-800 { animation-delay: 800ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================================
+   GRAIN TEXTURE
+   ========================================================================= */
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
 }
