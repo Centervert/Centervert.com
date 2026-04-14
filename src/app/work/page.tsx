@@ -77,16 +77,16 @@ export default function Page() {
                     </div>
                   </div>
                   <div className="md:col-span-4">
-                    <div className="grid grid-cols-3 gap-3 md:grid-cols-1">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3 md:grid-cols-1">
                       {cs.metrics.map((m) => (
                         <div
                           key={m.label}
-                          className="rounded-2xl border border-cv-black/5 bg-white p-5"
+                          className="rounded-2xl border border-cv-black/5 bg-white p-4 sm:p-5"
                         >
-                          <div className="font-serif text-[1.75rem] font-medium leading-none tracking-tight text-evergreen">
+                          <div className="font-serif text-[1.35rem] font-medium leading-none tracking-tight text-evergreen sm:text-[1.5rem] md:text-[1.75rem]">
                             {m.value}
                           </div>
-                          <p className="mt-2 text-[12.5px] leading-snug text-cv-black/55">
+                          <p className="mt-2 text-[11.5px] leading-snug text-cv-black/55 sm:text-[12.5px]">
                             {m.label}
                           </p>
                         </div>

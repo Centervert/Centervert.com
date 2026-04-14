@@ -28,16 +28,18 @@ export function Hero() {
             variants={staggerContainerSlow}
             className="flex max-w-4xl flex-col items-center"
           >
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="max-w-full">
               <Link
                 href={routes.work}
-                className="group inline-flex items-center gap-2 rounded-full border border-cv-black/10 bg-white/70 px-4 py-1.5 text-[12.5px] font-medium text-cv-black/70 backdrop-blur-sm transition-all hover:border-cv-black/20 hover:bg-white"
+                className="group inline-flex max-w-full items-center gap-2 rounded-full border border-cv-black/10 bg-white/70 px-3 py-1.5 text-[11.5px] font-medium text-cv-black/70 backdrop-blur-sm transition-all hover:border-cv-black/20 hover:bg-white sm:px-4 sm:text-[12.5px]"
               >
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-highlight text-cv-black">
+                <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-highlight text-cv-black">
                   <Sparkles className="h-3 w-3" />
                 </span>
-                New case study: One partner, four vendors retired
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                <span className="truncate">
+                  New case study: four vendors retired
+                </span>
+                <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </motion.div>
 
@@ -78,16 +80,16 @@ export function Hero() {
 
             <motion.div
               variants={fadeInUp}
-              className="mt-14 inline-flex items-center gap-3 rounded-full border border-cv-black/10 bg-white/70 py-2.5 pl-2.5 pr-5 shadow-[var(--shadow-1)] backdrop-blur-sm"
+              className="mt-12 flex max-w-full items-center gap-3 rounded-full border border-cv-black/10 bg-white/70 py-2.5 pl-2.5 pr-4 shadow-[var(--shadow-1)] backdrop-blur-sm sm:mt-14 sm:pr-5"
             >
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-evergreen text-[10px] font-bold text-highlight">
                 SC
               </div>
-              <p className="text-[13.5px] text-cv-black/75">
+              <p className="text-left text-[12.5px] leading-snug text-cv-black/75 sm:text-[13.5px]">
                 <span className="font-semibold text-cv-black">
                   &ldquo;Replaced four vendors with one team.&rdquo;
                 </span>{" "}
-                <span className="text-cv-black/50">Sarah C., VP Operations</span>
+                <span className="text-cv-black/50">Sarah C., VP Ops</span>
               </p>
             </motion.div>
           </motion.div>

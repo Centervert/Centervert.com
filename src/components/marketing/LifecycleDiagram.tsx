@@ -65,7 +65,7 @@ export function LifecycleDiagram() {
               onMouseEnter={() => setActive(stage)}
               onFocus={() => setActive(stage)}
               className={cn(
-                "group relative flex flex-col items-start gap-4 rounded-2xl border p-5 text-left transition-all duration-300 md:p-6",
+                "group relative flex flex-col items-start gap-3 rounded-2xl border p-4 text-left transition-all duration-300 sm:gap-4 sm:p-5 md:p-6",
                 isActive
                   ? "border-cv-black/20 bg-white shadow-[var(--shadow-3)]"
                   : "border-cv-black/5 bg-white/60 hover:border-cv-black/10 hover:bg-white"
@@ -74,23 +74,23 @@ export function LifecycleDiagram() {
               <div className="flex w-full items-center justify-between">
                 <span
                   className={cn(
-                    "inline-flex h-10 w-10 items-center justify-center rounded-xl transition-colors",
+                    "inline-flex h-9 w-9 items-center justify-center rounded-xl transition-colors sm:h-10 sm:w-10",
                     isActive
                       ? "bg-evergreen text-highlight"
                       : "bg-cv-black/5 text-cv-black/60 group-hover:bg-cv-black/10"
                   )}
                 >
-                  <Icon className="h-5 w-5" />
+                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </span>
-                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-cv-black/40">
+                <span className="font-mono text-[10.5px] font-medium uppercase tracking-[0.2em] text-cv-black/40 sm:text-[11px]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
               <div>
-                <div className="font-serif text-[1.5rem] font-medium leading-tight text-cv-black">
+                <div className="font-serif text-[1.25rem] font-medium leading-tight text-cv-black sm:text-[1.5rem]">
                   {lifecycleLabels[stage]}
                 </div>
-                <div className="mt-1 text-[13px] text-cv-black/50">
+                <div className="mt-1 text-[12px] text-cv-black/50 sm:text-[13px]">
                   {stage === "plan" && "Discovery & strategy"}
                   {stage === "build" && "Software & automation"}
                   {stage === "implement" && "Infrastructure & AV"}
@@ -121,13 +121,13 @@ export function LifecycleDiagram() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="grid gap-8 p-8 md:grid-cols-[1.3fr_1fr] md:gap-12 md:p-12"
+            className="grid gap-8 p-6 sm:p-8 md:grid-cols-[1.3fr_1fr] md:gap-12 md:p-12"
           >
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-evergreen">
                 {lifecycleLabels[active]}
               </p>
-              <h3 className="mt-3 font-serif text-[2rem] font-medium leading-[1.1] tracking-tight text-cv-black md:text-[2.5rem]">
+              <h3 className="mt-3 font-serif text-[1.5rem] font-medium leading-[1.15] tracking-tight text-cv-black sm:text-[1.75rem] md:text-[2.25rem] md:leading-[1.1]">
                 {stageCopy[active].headline}
               </h3>
               <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-cv-black/60 md:text-base">

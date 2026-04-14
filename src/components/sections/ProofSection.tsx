@@ -47,16 +47,16 @@ export function ProofSection() {
         </div>
 
         <div className="md:col-span-5">
-          <div className="sticky top-28 space-y-6">
+          <div className="grid gap-4 sm:grid-cols-3 md:sticky md:top-28 md:grid-cols-1 md:gap-6">
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-2xl border border-cv-black/5 bg-white p-8 shadow-[var(--shadow-1)]"
+                className="rounded-2xl border border-cv-black/5 bg-white p-6 shadow-[var(--shadow-1)] sm:p-8"
               >
-                <div className="font-serif text-[3.5rem] font-medium leading-none tracking-tight text-evergreen">
+                <div className="font-serif text-[2.5rem] font-medium leading-none tracking-tight text-evergreen sm:text-[2.75rem] md:text-[3.5rem]">
                   <StatCounter value={s.value} suffix={s.suffix} />
                 </div>
-                <p className="mt-3 text-[14px] leading-snug text-cv-black/55">
+                <p className="mt-3 text-[13px] leading-snug text-cv-black/55 sm:text-[14px]">
                   {s.label}
                 </p>
               </div>

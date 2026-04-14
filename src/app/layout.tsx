@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,38 +7,47 @@ export const metadata: Metadata = {
     icon: "/icon.png",
   },
   title: {
-    default: "Centervert | AI, Software & Managed IT | Greenville, SC",
+    default: "Centervert | The systems your business runs on.",
     template: "%s | Centervert",
   },
   description:
-    "AI, software, branding, AV, and managed IT - one team that builds, connects, and runs your entire tech stack. Based in Greenville, SC.",
+    "Centervert helps businesses plan, build, implement, and support the systems they rely on to operate. AI, software, infrastructure, and managed services from one Greenville, SC team.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.centervert.com",
     siteName: "Centervert",
-    title: "Centervert | AI, Software & Managed IT | Greenville, SC",
+    title: "Centervert | The systems your business runs on.",
     description:
-      "AI, software, branding, AV, and managed IT - one team that builds, connects, and runs your entire tech stack. Based in Greenville, SC.",
+      "Plan, build, implement, and support the systems your business runs on. One Greenville, SC team.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Centervert | AI, Software & Managed IT | Greenville, SC",
+    title: "Centervert | The systems your business runs on.",
     description:
-      "AI, software, branding, AV, and managed IT - one team. Greenville, SC.",
+      "Plan, build, implement, and support the systems your business runs on. One Greenville, SC team.",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F7F7F2" },
+    { media: "(prefers-color-scheme: dark)", color: "#013220" },
+  ],
+  width: "device-width",
+  initialScale: 1,
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Centervert LLC",
+  description:
+    "Centervert helps businesses plan, build, implement, and support the systems they rely on to operate.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "2 W Washington St, Suite 200",
     addressLocality: "Greenville",
     addressRegion: "SC",
-    postalCode: "29601",
     addressCountry: "US",
   },
   telephone: "(864) 987-8282",

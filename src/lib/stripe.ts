@@ -1,8 +1,33 @@
 import Stripe from "stripe";
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-02-25.clover",
-  typescript: true,
+/**
+ * Lazy singleton. Constructing the Stripe client at module load fails the
+ * Next.js production build because page-data collection runs without the
+ * production env. Accessing `getStripe()` at runtime (inside an API handler)
+ * keeps the build green while still throwing the same clear error at
+ * request time if the env var is missing.
+ */
+let client: Stripe | null = null;
+function getStripe(): Stripe {
+  if (client) return client;
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
+    throw new Error(
+      "Stripe is not configured: STRIPE_SECRET_KEY is missing in the environment."
+    );
+  }
+  client = new Stripe(key, {
+    apiVersion: "2026-02-25.clover",
+    typescript: true,
+  });
+  return client;
+}
+
+export const stripe = new Proxy({} as Stripe, {
+  get(_target, prop) {
+    const real = getStripe() as unknown as Record<string, unknown>;
+    return real[prop as string];
+  },
 });
 
 export async function createCheckoutSession({
@@ -16,7 +41,7 @@ export async function createCheckoutSession({
   priceCents: number;
   customerEmail: string;
 }) {
-  const session = await stripe.checkout.sessions.create({
+  const session = await getStripe().checkout.sessions.create({
     mode: "payment",
     customer_email: customerEmail,
     line_items: [
@@ -44,9 +69,11 @@ export function constructWebhookEvent(
   body: string | Buffer,
   signature: string
 ) {
-  return stripe.webhooks.constructEvent(
-    body,
-    signature,
-    process.env.STRIPE_WEBHOOK_SECRET!
-  );
+  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!secret) {
+    throw new Error(
+      "Stripe webhook is not configured: STRIPE_WEBHOOK_SECRET is missing."
+    );
+  }
+  return getStripe().webhooks.constructEvent(body, signature, secret);
 }

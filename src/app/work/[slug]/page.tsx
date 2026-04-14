@@ -87,12 +87,12 @@ export default async function Page({
             {cs.metrics.map((m) => (
               <li
                 key={m.label}
-                className="rounded-2xl border border-cv-black/5 bg-smoke/60 p-8 text-center"
+                className="rounded-2xl border border-cv-black/5 bg-smoke/60 p-6 text-center sm:p-8"
               >
-                <div className="font-serif text-[3.25rem] font-medium leading-none tracking-tight text-evergreen">
+                <div className="font-serif text-[2.5rem] font-medium leading-none tracking-tight text-evergreen sm:text-[3rem] lg:text-[3.25rem]">
                   {m.value}
                 </div>
-                <p className="mt-3 text-[13.5px] leading-snug text-cv-black/55">
+                <p className="mt-3 text-[13px] leading-snug text-cv-black/55 sm:text-[13.5px]">
                   {m.label}
                 </p>
               </li>
