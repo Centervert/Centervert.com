@@ -6,15 +6,22 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { MeshGradient } from "@/components/marketing/MeshGradient";
+import { AnimatedOrb } from "@/components/marketing/AnimatedOrb";
 import { routes } from "@/lib/routes";
 import { fadeInUp, staggerContainerSlow } from "@/lib/motion";
 
 export function Hero() {
   return (
     <section className="relative -mt-16 overflow-hidden pt-16 md:-mt-20 md:pt-20">
-      <MeshGradient tone="light" />
+      <MeshGradient tone="light" grain={false} />
+      <AnimatedOrb tone="brand" speed={50} blur={120} opacity={0.42} scale={1.5} />
+      {/* Soft readability veil over the orb */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-smoke/40 via-smoke/10 to-smoke/70"
+      />
       <Container size="wide">
-        <div className="relative flex min-h-[86vh] flex-col items-center justify-center pt-24 pb-20 text-center md:pt-32 md:pb-28">
+        <div className="relative flex min-h-[88vh] flex-col items-center justify-center px-2 pt-20 pb-16 text-center sm:min-h-[86vh] md:pt-32 md:pb-28">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -36,7 +43,7 @@ export function Hero() {
 
             <motion.h1
               variants={fadeInUp}
-              className="mt-8 font-serif text-[clamp(2.75rem,8vw,5.5rem)] font-medium leading-[1.02] tracking-[-0.025em] text-cv-black text-balance"
+              className="mt-8 font-serif text-[clamp(2.5rem,8vw,5.5rem)] font-medium leading-[1.02] tracking-[-0.025em] text-cv-black text-balance"
             >
               The systems your business
               <br />

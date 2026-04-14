@@ -17,7 +17,8 @@ import {
   Share2,
   type LucideIcon,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import { Nav } from "@/components/sections/Nav";
+import { Footer } from "@/components/sections/Footer";
 import { services, getService } from "@/lib/marketplace";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -96,21 +97,21 @@ function OrderFormContent() {
 
   return (
     <div className="min-h-screen bg-smoke">
-      <Navbar />
+      <Nav />
 
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-20 md:pt-36">
         <Link
           href="/marketplace"
-          className="inline-flex items-center gap-1.5 text-sm text-cv-black/40 transition-colors hover:text-cv-black"
+          className="inline-flex items-center gap-1.5 text-[13px] font-medium text-cv-black/50 transition-colors hover:text-cv-black"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to Marketplace
         </Link>
 
-        <h1 className="mt-6 text-3xl font-bold tracking-tight text-cv-black md:text-[2.5rem]">
-          Place an Order
+        <h1 className="mt-6 font-serif text-[clamp(2.25rem,5vw,3.5rem)] font-medium leading-[1.08] tracking-tight text-cv-black">
+          Place an order.
         </h1>
-        <p className="mt-2 text-sm text-cv-black/50">
+        <p className="mt-4 max-w-lg text-[15.5px] leading-relaxed text-cv-black/60">
           Select a service, describe what you need, and checkout. Our AI agent
           will get to work immediately.
         </p>
@@ -326,6 +327,7 @@ function OrderFormContent() {
           </p>
         </form>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 export { MeshGradient } from "./MeshGradient";
+export { AnimatedOrb } from "./AnimatedOrb";
 export { ScrollReveal, RevealItem } from "./ScrollReveal";
 export { Marquee } from "./Marquee";
 export { StatCounter } from "./StatCounter";

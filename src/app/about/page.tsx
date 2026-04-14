@@ -1,357 +1,165 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
+import { ClipboardCheck, Hammer, Cable, LifeBuoy } from "lucide-react";
+import { Nav } from "@/components/sections/Nav";
+import { Footer } from "@/components/sections/Footer";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { Eyebrow, Heading, Text } from "@/components/ui/typography";
+import { MeshGradient } from "@/components/marketing/MeshGradient";
 
 export const metadata: Metadata = {
   title: "About Centervert",
   description:
-    "Centervert is a Greenville, SC technology company. One team of 18 delivering AI, custom software, web development, brand design, low voltage AV, and managed IT - replacing 4-5 vendors with a single partner.",
+    "Centervert is a Greenville, SC business technology company helping organizations plan, build, implement, and support the systems they rely on to operate.",
 };
 
-const values = [
+const principles = [
   {
-    title: "Resourcefulness",
-    description:
-      "We find a way. Budget constraints, tight timelines, technical debt - we work with what exists and build what doesn't.",
+    Icon: ClipboardCheck,
+    title: "Plan before you build.",
+    body: "Most technology fails on diagnosis, not execution. We invest in understanding how a business runs before proposing anything.",
   },
   {
-    title: "Ownership",
-    description:
-      "We don't pass the buck. When something is ours, we own it completely - the outcome, the timeline, and the quality.",
+    Icon: Hammer,
+    title: "Build around how the business runs.",
+    body: "Custom software, AI, and platform work fit to the business. Not the other way around. Opinionated, not religious, about the stack.",
   },
   {
-    title: "No-Fluff Execution",
-    description:
-      "We skip the decks full of buzzwords and the meetings that should have been emails. We move fast and build things that work.",
+    Icon: Cable,
+    title: "Implement in the real world.",
+    body: "Software lives in a building, on a network, on someone's phone. We plan the physical layer alongside the digital.",
+  },
+  {
+    Icon: LifeBuoy,
+    title: "Stay involved.",
+    body: "Most clients start with one engagement and stay for years. That is the support layer doing its job.",
   },
 ];
 
-const capabilities = [
-  "AI & Workflow Automation",
-  "Custom Web & Mobile Apps",
-  "SaaS Platform Development",
-  "Web Design & Development",
-  "Brand Identity & Strategy",
-  "Low Voltage & AV Installation",
-  "Managed IT & Cybersecurity",
-  "Microsoft 365 & Google Workspace",
-];
-
-export default function AboutPage() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-smoke">
-      <Navbar />
-
-      {/* Hero */}
-      <section className="mx-auto max-w-4xl px-6 pt-32 pb-12 text-center md:pt-40 md:pb-16">
-        <p className="text-xs font-semibold uppercase tracking-widest text-evergreen">
-          About Centervert
-        </p>
-        <h1 className="mt-3 text-4xl font-bold leading-tight tracking-tight text-cv-black md:text-[3.25rem] md:leading-[1.15]">
-          The Center of Vertical Growth
-        </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-cv-black/60 md:text-lg">
-          One Greenville, SC technology team. Six service verticals: AI &
-          automation, custom software, web development, brand design, low
-          voltage AV, and managed IT. No gaps between vendors - just one
-          partner that builds, connects, and runs it all.
-        </p>
-      </section>
-
-      {/* Story */}
-      <section className="border-y border-cv-black/5 bg-white px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-12 md:grid-cols-2 md:items-start">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-evergreen">
-                Our Story
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-cv-black md:text-[2.5rem] md:leading-[1.15]">
-                One team that talks to itself.
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-cv-black/60">
-                Centervert was founded in Greenville, South Carolina with a
-                straightforward premise: most businesses pay for four or five
-                vendors who never talk to each other. Managed IT doesn&apos;t know
-                what the dev shop is building. The branding agency has no idea
-                what the website stack looks like. The result is gaps,
-                miscommunication, and wasted budget.
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-cv-black/60">
-                Centervert is the alternative. One technology team that
-                handles AI & automation, custom software, web development, brand
-                design, low voltage AV, and managed IT - working together from
-                day one. No handoffs. No finger-pointing. No vendor blame
-                games.
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-cv-black/60">
-                Today our team of 18 serves clients across the US and
-                internationally - from corporate offices and churches in
-                Greenville and the Carolinas to growing SaaS companies
-                nationwide.
-              </p>
+      <Nav />
+      <main>
+        {/* Hero */}
+        <section className="relative -mt-16 overflow-hidden pt-16 md:-mt-20 md:pt-20">
+          <MeshGradient tone="light" />
+          <Container size="wide">
+            <div className="relative py-24 md:py-32">
+              <Eyebrow>About Centervert</Eyebrow>
+              <Heading as="h1" size="display-xl" className="mt-5 max-w-4xl">
+                A Greenville technology company built around{" "}
+                <span className="text-cv-black/35">one idea.</span>
+              </Heading>
+              <Text size="lg" tone="muted" className="mt-6 max-w-2xl">
+                Centervert helps businesses plan, build, implement, and support
+                the systems they rely on to operate. That covers software,
+                platforms, infrastructure, and managed services, all inside
+                one team that actually talks to each other.
+              </Text>
             </div>
-            <div className="space-y-6">
-              <div className="rounded-2xl border border-cv-black/10 bg-smoke p-6 md:p-8">
-                <p className="text-4xl font-bold tracking-tight text-evergreen">
-                  18
-                </p>
-                <p className="mt-1 text-sm font-medium text-cv-black/50">
-                  Team Members (US + International)
-                </p>
-              </div>
-              <div className="rounded-2xl border border-cv-black/10 bg-smoke p-6 md:p-8">
-                <p className="text-4xl font-bold tracking-tight text-evergreen">
-                  6
-                </p>
-                <p className="mt-1 text-sm font-medium text-cv-black/50">
-                  Service Verticals Under One Roof
-                </p>
-              </div>
-              <div className="rounded-2xl border border-cv-black/10 bg-smoke p-6 md:p-8">
-                <p className="text-4xl font-bold tracking-tight text-evergreen">
-                  1
-                </p>
-                <p className="mt-1 text-sm font-medium text-cv-black/50">
-                  Relationship. One Team. One Point of Contact.
-                </p>
-              </div>
+          </Container>
+        </section>
+
+        {/* Story */}
+        <Section tone="white" padding="lg" bordered ariaLabelledBy="story-heading">
+          <div className="grid gap-16 md:grid-cols-12 md:gap-20">
+            <div className="md:col-span-4">
+              <Eyebrow>Our story</Eyebrow>
+              <Heading as="h2" size="h1" id="story-heading" className="mt-4">
+                Why Centervert exists.
+              </Heading>
+            </div>
+            <div className="md:col-span-8 space-y-6">
+              <Text size="lg" tone="muted">
+                Most businesses run on a pile of disconnected tools. An IT vendor
+                who does not know the software. A dev shop that disappears after
+                launch. A marketing agency with no visibility into the product.
+                A freelance designer cycling between the three.
+              </Text>
+              <Text size="lg" tone="muted">
+                Centervert started because the operators we knew needed one
+                partner who could cover the full lifecycle. Not a consultant with
+                a slide deck. Not a commodity outsourced labor pool. A small,
+                capable team that plans, builds, implements, and supports the
+                systems their clients depend on.
+              </Text>
+              <Text size="lg" tone="muted">
+                We are intentionally small, intentionally senior, and
+                intentionally based in Greenville. The work crosses Upstate SC,
+                the Southeast, and remote engagements nationwide.
+              </Text>
             </div>
           </div>
-        </div>
-      </section>
+        </Section>
 
-      {/* Values */}
-      <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-evergreen">
-            How We Work
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-cv-black md:text-[2.5rem]">
-            Three things we don&apos;t compromise on.
-          </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {values.map((v) => (
-              <div
-                key={v.title}
-                className="rounded-2xl border border-cv-black/10 bg-white p-6 md:p-8"
+        {/* Principles */}
+        <Section tone="smoke" padding="lg" ariaLabelledBy="principles-heading">
+          <div className="max-w-3xl">
+            <Eyebrow>Principles</Eyebrow>
+            <Heading as="h2" size="display-lg" id="principles-heading" className="mt-5">
+              How we actually work.
+            </Heading>
+          </div>
+          <ul className="mt-14 grid gap-5 md:grid-cols-2">
+            {principles.map((p) => (
+              <li
+                key={p.title}
+                className="rounded-2xl border border-cv-black/5 bg-white p-8 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-2)]"
               >
-                <CheckCircle2 className="h-5 w-5 text-evergreen" />
-                <h3 className="mt-4 text-xl font-bold tracking-tight text-cv-black">
-                  {v.title}
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-evergreen text-highlight">
+                  <p.Icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-5 font-serif text-[1.5rem] font-medium leading-tight text-cv-black">
+                  {p.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-cv-black/60">
-                  {v.description}
+                <p className="mt-3 text-[15px] leading-relaxed text-cv-black/60">
+                  {p.body}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
+          </ul>
+        </Section>
 
-      {/* Capabilities */}
-      <section className="border-y border-cv-black/5 bg-white px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-evergreen">
-            What We Do
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-cv-black md:text-[2.5rem]">
-            Every layer of your tech stack.
-          </h2>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-cv-black/50">
-            AI & workflow automation, custom web and mobile apps, SaaS
-            development, web design, brand identity, low voltage and AV
-            installation, managed IT and cybersecurity - one Greenville-based
-            team instead of four or five vendors.
-          </p>
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {capabilities.map((cap) => (
-              <div
-                key={cap}
-                className="flex items-center gap-2 rounded-xl border border-cv-black/5 bg-smoke px-4 py-3 text-sm font-medium text-cv-black/70"
+        {/* Trust row */}
+        <Section tone="evergreen" padding="lg" ariaLabelledBy="trust-heading" className="isolate">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -z-10 opacity-40"
+            style={{
+              background:
+                "radial-gradient(at 15% 25%, rgba(192,255,0,0.2), transparent 55%), radial-gradient(at 85% 75%, rgba(36,84,255,0.28), transparent 55%)",
+            }}
+          />
+          <div className="max-w-3xl">
+            <Eyebrow className="text-white/50">What we will tell you</Eyebrow>
+            <Heading as="h2" size="display-lg" id="trust-heading" className="mt-5 text-white">
+              The things most vendors will not say out loud.
+            </Heading>
+          </div>
+          <ul className="mt-14 grid gap-4 md:grid-cols-2">
+            {[
+              "We can often work with what you already have instead of replacing it.",
+              "Sometimes the right answer is not a custom build.",
+              "We will say no to work that we are not the right partner for.",
+              "A project does not end at launch. Support is part of the system.",
+              "We focus on solving the real operational problem, not the surface request.",
+              "We speak plainly. Jargon exists to hide, and we do not need to hide.",
+            ].map((line) => (
+              <li
+                key={line}
+                className="rounded-xl border border-white/10 bg-white/[0.04] p-5 text-[15px] leading-relaxed text-white/80 backdrop-blur-sm"
               >
-                <CheckCircle2 className="h-4 w-4 shrink-0 text-evergreen" />
-                {cap}
-              </div>
+                {line}
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
+          </ul>
+        </Section>
 
-      {/* Location */}
-      <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-evergreen">
-                Based In
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-cv-black md:text-[2.5rem] md:leading-[1.15]">
-                Greenville, SC
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-cv-black/60">
-                Centervert is headquartered in downtown Greenville, South
-                Carolina - one of the fastest-growing cities in the Southeast.
-                We serve clients across Greenville, the Carolinas, and
-                nationally, with in-person capabilities for managed IT, low
-                voltage AV, and on-site strategy.
-              </p>
-              <address className="mt-6 not-italic space-y-1 text-sm text-cv-black/50">
-                <p>2 W Washington St, Suite 200</p>
-                <p>Greenville, SC 29601</p>
-                <a
-                  href="tel:8649878282"
-                  className="mt-2 block transition-colors hover:text-cv-black"
-                >
-                  (864) 987-8282
-                </a>
-                <a
-                  href="mailto:connect@centervert.com"
-                  className="block transition-colors hover:text-cv-black"
-                >
-                  connect@centervert.com
-                </a>
-              </address>
-            </div>
-            <div className="rounded-2xl border border-cv-black/10 bg-white p-8">
-              <p className="text-sm font-medium text-cv-black/70">
-                &ldquo;Replaced 4 vendors with one team. Our IT, software, and
-                branding are finally aligned.&rdquo;
-              </p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-evergreen text-[10px] font-bold text-white">
-                  SC
-                </div>
-                <p className="text-sm font-medium text-cv-black">
-                  Sarah C., VP Operations
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="border-t border-cv-black/5 bg-white px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-cv-black md:text-[2rem]">
-            Ready to work with one team?
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-cv-black/60">
-            Start with a strategy call. We&apos;ll learn your business, identify the
-            gaps, and show you what&apos;s possible when everything works together.
-          </p>
-          <a
-            href="/book"
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-highlight px-8 py-4 text-sm font-semibold text-cv-black transition-all hover:bg-highlight/90 hover:shadow-lg"
-          >
-            Book a Strategy Call
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-cv-black/5 bg-smoke px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-10 md:grid-cols-5">
-            <div className="md:col-span-2">
-              <Image
-                src="/images/centervert-logo-black.png"
-                alt="Centervert"
-                width={160}
-                height={40}
-                className="h-7 w-auto"
-              />
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-cv-black/50">
-                AI, software, branding, AV, and managed IT - one team that
-                builds, connects, and runs your entire tech stack.
-              </p>
-              <div className="mt-4 flex flex-col gap-1.5 text-sm text-cv-black/50">
-                <a
-                  href="mailto:connect@centervert.com"
-                  className="transition-colors hover:text-cv-black"
-                >
-                  connect@centervert.com
-                </a>
-                <a
-                  href="tel:8649878282"
-                  className="transition-colors hover:text-cv-black"
-                >
-                  (864) 987-8282
-                </a>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-cv-black">Services</h4>
-              <ul className="mt-4 space-y-2.5 text-sm text-cv-black/50">
-                {[
-                  { label: "AI & Automation", href: "/services/ai-automation" },
-                  { label: "Custom Software", href: "/services/custom-software" },
-                  { label: "Web Design", href: "/services/web-development" },
-                  { label: "Brand Design", href: "/services/brand-design" },
-                  { label: "Low Voltage & AV", href: "/services/low-voltage" },
-                  { label: "Managed IT", href: "/services/managed-it" },
-                ].map((s) => (
-                  <li key={s.label}>
-                    <Link
-                      href={s.href}
-                      className="transition-colors hover:text-cv-black"
-                    >
-                      {s.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-cv-black">Company</h4>
-              <ul className="mt-4 space-y-2.5 text-sm text-cv-black/50">
-                {[
-                  { label: "About", href: "/about" },
-                  { label: "Clients", href: "/#services" },
-                  { label: "Careers", href: "/about" },
-                  { label: "News", href: "/news" },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="transition-colors hover:text-cv-black"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-cv-black">Legal</h4>
-              <ul className="mt-4 space-y-2.5 text-sm text-cv-black/50">
-                {[
-                  { label: "Privacy Policy", href: "/privacy" },
-                  { label: "Terms of Service", href: "/terms" },
-                  { label: "Cookie Policy", href: "/cookies" },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="transition-colors hover:text-cv-black"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-cv-black/5 pt-8 text-xs text-cv-black/30 sm:flex-row">
-            <p>&copy; 2026 Centervert. All rights reserved.</p>
-            <p>Greenville, SC</p>
-          </div>
-        </div>
-      </footer>
+        <FinalCTA />
+      </main>
+      <Footer />
     </div>
   );
 }

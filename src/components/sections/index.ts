@@ -11,3 +11,4 @@ export { TestimonialsSection } from "./TestimonialsSection";
 export { FAQSection } from "./FAQSection";
 export type { FAQ } from "./FAQSection";
 export { FinalCTA } from "./FinalCTA";
+export { ServicePage } from "./ServicePage";

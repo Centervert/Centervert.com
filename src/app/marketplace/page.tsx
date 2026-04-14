@@ -15,7 +15,8 @@ import {
   Clock,
   type LucideIcon,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import { Nav } from "@/components/sections/Nav";
+import { Footer } from "@/components/sections/Footer";
 import { services } from "@/lib/marketplace";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -38,7 +39,7 @@ export const metadata = {
 export default function MarketplacePage() {
   return (
     <div className="min-h-screen bg-smoke">
-      <Navbar />
+      <Nav />
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden">
@@ -50,7 +51,7 @@ export default function MarketplacePage() {
               AI Agent Marketplace
             </span>
           </div>
-          <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-cv-black md:text-[3.5rem] md:leading-[1.1]">
+          <h1 className="mt-6 font-serif text-[clamp(2.5rem,6vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.02em] text-cv-black text-balance">
             AI-powered work.{" "}
             <span className="text-cv-black/35">Delivered in hours.</span>
           </h1>
@@ -198,23 +199,7 @@ export default function MarketplacePage() {
         </div>
       </section>
 
-      {/* ===== FOOTER (simple) ===== */}
-      <footer className="border-t border-cv-black/5 bg-smoke px-6 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-xs text-cv-black/30 sm:flex-row">
-          <p>&copy; 2026 Centervert. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/" className="hover:text-cv-black">
-              Home
-            </Link>
-            <Link href="/marketplace" className="hover:text-cv-black">
-              Marketplace
-            </Link>
-            <Link href="/news" className="hover:text-cv-black">
-              News
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

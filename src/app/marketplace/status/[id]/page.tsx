@@ -15,7 +15,8 @@ import {
   Download,
   Loader2,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import { Nav } from "@/components/sections/Nav";
+import { Footer } from "@/components/sections/Footer";
 import {
   getOrder,
   getService,
@@ -162,7 +163,7 @@ export default function OrderStatusPage() {
   if (loading || !order) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-smoke">
-        <Navbar />
+        <Nav />
         <Loader2 className="h-6 w-6 animate-spin text-evergreen" />
       </div>
     );
@@ -175,7 +176,7 @@ export default function OrderStatusPage() {
 
   return (
     <div className="min-h-screen bg-smoke">
-      <Navbar />
+      <Nav />
 
       <div className="mx-auto max-w-3xl px-6 pt-28 pb-20 md:pt-36">
         <Link
@@ -189,8 +190,8 @@ export default function OrderStatusPage() {
         {/* ── Header ── */}
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-cv-black md:text-3xl">
-              Order Status
+            <h1 className="font-serif text-[2rem] font-medium leading-tight tracking-tight text-cv-black md:text-[2.5rem]">
+              Order status
             </h1>
             <p className="mt-1 font-mono text-xs text-cv-black/40">
               {order.id}
@@ -473,6 +474,7 @@ export default function OrderStatusPage() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }

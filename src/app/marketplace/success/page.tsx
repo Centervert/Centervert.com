@@ -4,7 +4,8 @@ import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, Clock, Mail, MessageSquare } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import { Nav } from "@/components/sections/Nav";
+import { Footer } from "@/components/sections/Footer";
 import { getService } from "@/lib/marketplace";
 
 function SuccessContent() {
@@ -16,15 +17,15 @@ function SuccessContent() {
 
   return (
     <div className="min-h-screen bg-smoke">
-      <Navbar />
+      <Nav />
 
       <div className="mx-auto max-w-2xl px-6 pt-32 pb-20 md:pt-40">
         <div className="text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
             <CheckCircle2 className="h-8 w-8 text-green-600" />
           </div>
-          <h1 className="mt-6 text-3xl font-bold tracking-tight text-cv-black md:text-[2.5rem]">
-            Order Confirmed
+          <h1 className="mt-6 font-serif text-[2.5rem] font-medium leading-tight tracking-tight text-cv-black md:text-[3rem]">
+            Order confirmed.
           </h1>
           <p className="mt-3 text-base text-cv-black/50">
             Your payment of{" "}
@@ -130,6 +131,7 @@ function SuccessContent() {
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
