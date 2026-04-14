@@ -5,23 +5,51 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { MeshGradient } from "@/components/marketing/MeshGradient";
 import { AnimatedOrb } from "@/components/marketing/AnimatedOrb";
 import { routes } from "@/lib/routes";
 import { fadeInUp, staggerContainerSlow } from "@/lib/motion";
 
 export function Hero() {
   return (
-    <section className="relative -mt-16 overflow-hidden pt-16 md:-mt-20 md:pt-20">
-      <MeshGradient tone="light" grain={false} />
-      <AnimatedOrb tone="brand" speed={50} blur={120} opacity={0.42} scale={1.5} />
-      {/* Soft readability veil over the orb */}
+    <section className="relative -mt-16 overflow-hidden bg-smoke pt-16 md:-mt-20 md:pt-20">
+      {/* Base wash: soft vertical gradient so top nav stays legible */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-smoke/40 via-smoke/10 to-smoke/70"
+        className="absolute inset-0 bg-gradient-to-b from-white via-smoke to-smoke"
       />
+
+      {/* Animated orb behind everything */}
+      <AnimatedOrb tone="brand" speed={36} blur={70} opacity={0.75} scale={1.7} />
+
+      {/* Fine dotted grid — Linear-style texture over the orb */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(15,15,15,0.18) 1px, transparent 0)",
+          backgroundSize: "24px 24px",
+          maskImage:
+            "radial-gradient(ellipse at 50% 55%, black 35%, transparent 80%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse at 50% 55%, black 35%, transparent 80%)",
+        }}
+      />
+
+      {/* Readability veil — keeps the headline black and legible */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-smoke/35 via-smoke/0 to-smoke/85"
+      />
+
+      {/* Bottom hairline to hand off to the logo marquee below */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cv-black/10 to-transparent"
+      />
+
       <Container size="wide">
-        <div className="relative flex min-h-[88vh] flex-col items-center justify-center px-2 pt-20 pb-16 text-center sm:min-h-[86vh] md:pt-32 md:pb-28">
+        <div className="relative flex min-h-[92vh] flex-col items-center justify-center px-2 pt-24 pb-20 text-center md:min-h-[88vh] md:pt-36 md:pb-32">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -31,7 +59,7 @@ export function Hero() {
             <motion.div variants={fadeInUp} className="max-w-full">
               <Link
                 href={routes.work}
-                className="group inline-flex max-w-full items-center gap-2 rounded-full border border-cv-black/10 bg-white/70 px-3 py-1.5 text-[11.5px] font-medium text-cv-black/70 backdrop-blur-sm transition-all hover:border-cv-black/20 hover:bg-white sm:px-4 sm:text-[12.5px]"
+                className="group inline-flex max-w-full items-center gap-2 rounded-full border border-cv-black/10 bg-white/80 px-3 py-1.5 text-[11.5px] font-medium text-cv-black/75 shadow-[var(--shadow-1)] backdrop-blur-md transition-all hover:border-cv-black/25 hover:bg-white sm:px-4 sm:text-[12.5px]"
               >
                 <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-highlight text-cv-black">
                   <Sparkles className="h-3 w-3" />
@@ -45,25 +73,32 @@ export function Hero() {
 
             <motion.h1
               variants={fadeInUp}
-              className="mt-8 font-serif text-[clamp(2.5rem,8vw,5.5rem)] font-medium leading-[1.02] tracking-[-0.025em] text-cv-black text-balance"
+              className="mt-10 font-serif text-[clamp(2.75rem,10vw,6.5rem)] font-medium leading-[0.98] tracking-[-0.03em] text-cv-black text-balance"
             >
-              The systems your business
+              The systems your{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 italic">business</span>
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-[0.08em] -z-0 h-[0.35em] bg-highlight/70"
+                />
+              </span>
               <br />
               <span className="text-cv-black/35">runs on.</span>
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
-              className="mt-8 max-w-2xl text-[17px] leading-[1.6] text-cv-black/60 md:text-[19px]"
+              className="mt-8 max-w-2xl text-[17px] leading-[1.6] text-cv-black/65 md:text-[19px]"
             >
               Centervert helps businesses plan, build, implement, and support the
-              technology they rely on to operate. Software, infrastructure, automation,
-              and managed services, from one Greenville team.
+              technology they rely on to operate. Software, infrastructure,
+              automation, and managed services, from one Greenville team.
             </motion.p>
 
             <motion.div
               variants={fadeInUp}
-              className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
+              className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center"
             >
               <Button
                 href={routes.book}
@@ -80,12 +115,12 @@ export function Hero() {
 
             <motion.div
               variants={fadeInUp}
-              className="mt-12 flex max-w-full items-center gap-3 rounded-full border border-cv-black/10 bg-white/70 py-2.5 pl-2.5 pr-4 shadow-[var(--shadow-1)] backdrop-blur-sm sm:mt-14 sm:pr-5"
+              className="mt-14 flex max-w-full items-center gap-3 rounded-full border border-cv-black/10 bg-white/80 py-2.5 pl-2.5 pr-4 shadow-[var(--shadow-1)] backdrop-blur-md sm:mt-16 sm:pr-5"
             >
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-evergreen text-[10px] font-bold text-highlight">
                 SC
               </div>
-              <p className="text-left text-[12.5px] leading-snug text-cv-black/75 sm:text-[13.5px]">
+              <p className="text-left text-[12.5px] leading-snug text-cv-black/80 sm:text-[13.5px]">
                 <span className="font-semibold text-cv-black">
                   &ldquo;Replaced four vendors with one team.&rdquo;
                 </span>{" "}

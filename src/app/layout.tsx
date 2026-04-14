@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { effra, recia } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${effra.variable} ${recia.variable}`}>
       <body className="antialiased">
         {children}
         <script

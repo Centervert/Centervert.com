@@ -168,10 +168,10 @@ export default function MarketplacePage() {
       {/* ===== CTA ===== */}
       <section className="grain relative overflow-hidden bg-evergreen px-6 py-20 md:py-28">
         <Image
-          src="/images/space-overlay.png"
+          src="/brand/space/centervert.space.overlay.3.jpg"
           alt=""
           fill
-          className="pointer-events-none absolute inset-0 object-cover opacity-20 mix-blend-lighten"
+          className="pointer-events-none absolute inset-0 object-cover opacity-25 mix-blend-lighten"
         />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-[2.5rem]">

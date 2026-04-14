@@ -1,104 +1,9 @@
 @import "tailwindcss";
 
 /* =========================================================================
-   FONTS
-   Effra (sans, UI + body) and Recia (variable serif, display).
-   Loaded from public/brand/fonts. Older /fonts/* paths retained for any
-   component still referencing them during migration.
+   FONTS — loaded via next/font/local (src/lib/fonts.ts). This file only
+   aliases the CSS variables `next/font` generates to our brand names.
    ========================================================================= */
-
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_Th.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_Hair.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_Lt.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_Rg.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_It.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_Md.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_SBd.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_Bd.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_BdIt.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_XBd.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Effra";
-  src: url("/brand/fonts/Effra_Blk.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Recia";
-  src: url("/brand/fonts/Recia-Variable.ttf") format("truetype-variations");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Recia";
-  src: url("/brand/fonts/Recia-VariableItalic.ttf") format("truetype-variations");
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-}
 
 /* =========================================================================
    DESIGN TOKENS
@@ -109,9 +14,10 @@
   --background: #F7F7F2;
   --foreground: #0F0F0F;
 
-  /* Fonts */
-  --font-effra: "Effra", ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
-  --font-recia: "Recia", ui-serif, Georgia, serif;
+  /* Fonts — next/font sets --font-effra-local and --font-recia-local
+     on <html>. We alias them to --font-effra / --font-recia. */
+  --font-effra: var(--font-effra-local), ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-recia: var(--font-recia-local), ui-serif, Georgia, Cambria, "Times New Roman", serif;
   --font-mono: ui-monospace, "JetBrains Mono", Menlo, Monaco, "Courier New", monospace;
 
   /* Brand colors */
