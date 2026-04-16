@@ -111,7 +111,7 @@ export default function Page() {
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-evergreen text-highlight">
                   <p.Icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-5 font-serif text-[1.5rem] font-medium leading-tight text-cv-black">
+                <h3 className="mt-5 font-sans text-[1.5rem] font-medium leading-tight text-cv-black">
                   {p.title}
                 </h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-cv-black/60">

@@ -113,7 +113,7 @@ export default function Page() {
                         <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-cv-black/40">
                           {c.label}
                         </div>
-                        <div className="mt-2 font-serif text-[1.25rem] font-medium leading-tight text-cv-black">
+                        <div className="mt-2 font-sans text-[1.25rem] font-medium leading-tight text-cv-black">
                           {c.value}
                         </div>
                         <p className="mt-3 text-[14px] leading-relaxed text-cv-black/55">

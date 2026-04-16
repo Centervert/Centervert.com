@@ -119,7 +119,7 @@ export default function Page() {
                 key={v.title}
                 className="rounded-2xl border border-cv-black/5 bg-white p-8"
               >
-                <h3 className="font-serif text-[1.5rem] font-medium leading-tight text-cv-black">
+                <h3 className="font-sans text-[1.5rem] font-medium leading-tight text-cv-black">
                   {v.title}
                 </h3>
                 <p className="mt-4 text-[15px] leading-relaxed text-cv-black/60">

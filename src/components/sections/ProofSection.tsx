@@ -8,7 +8,7 @@ import { routes } from "@/lib/routes";
 const stats = [
   { value: 4, suffix: "", label: "Vendors retired for one anchor client" },
   { value: 120, suffix: "+", label: "Hours automated per month" },
-  { value: 24, suffix: "/7", label: "Support coverage, always on" },
+  { value: 24, suffix: "/7", label: "Help desk when the ticket queue does not sleep" },
 ];
 
 export function ProofSection() {
@@ -28,12 +28,15 @@ export function ProofSection() {
             launch. A marketing agency siloed from the product. And a freelance
             designer chasing the other three.
           </Text>
-          <Text size="lg" tone="muted" className="mt-4 max-w-xl">
+          <p className="mt-4 max-w-xl text-pretty text-[1.125rem] leading-[1.6] text-cv-black/60">
             Eighteen weeks later, one team owned the software, the platforms, the
             network, and the support. Help desk tickets dropped by more than half.
-            Lead response time moved from hours to minutes. The CEO called it &ldquo;the
-            first time our technology felt like it was on our side.&rdquo;
-          </Text>
+            Lead response time moved from hours to minutes. The CEO called it{" "}
+            <span className="font-quote font-normal text-cv-black/75">
+              &ldquo;the first time our technology felt like it was on our
+              side.&rdquo;
+            </span>
+          </p>
           <div className="mt-10">
             <Button
               href={routes.work}
@@ -53,7 +56,7 @@ export function ProofSection() {
                 key={s.label}
                 className="rounded-2xl border border-cv-black/5 bg-white p-6 shadow-[var(--shadow-1)] sm:p-8"
               >
-                <div className="font-serif text-[2.5rem] font-medium leading-none tracking-tight text-evergreen sm:text-[2.75rem] md:text-[3.5rem]">
+                <div className="font-sans text-[2.5rem] font-medium leading-none tracking-tight text-evergreen sm:text-[2.75rem] md:text-[3.5rem]">
                   <StatCounter value={s.value} suffix={s.suffix} />
                 </div>
                 <p className="mt-3 text-[13px] leading-snug text-cv-black/55 sm:text-[14px]">

@@ -12,6 +12,7 @@ const workLinks = [
 
 const companyLinks = [
   { label: "About", href: routes.about },
+  { label: "Scale Up", href: routes.scaleUp },
   { label: "Careers", href: routes.careers },
   { label: "News", href: routes.news },
   { label: "Contact", href: routes.contact },

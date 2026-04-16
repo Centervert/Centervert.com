@@ -46,8 +46,8 @@ export function TestimonialsSection() {
       <div className="max-w-3xl">
         <Eyebrow className="text-white/50">In Their Words</Eyebrow>
         <Heading as="h2" size="display-lg" id="testimonials-heading" className="mt-5 text-white">
-          Operators who trusted us{" "}
-          <span className="text-white/40">with the whole stack.</span>
+          After the handoff,{" "}
+          <span className="text-white/40">they still picked up.</span>
         </Heading>
       </div>
       <div className="mt-14 md:mt-20">

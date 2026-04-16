@@ -57,7 +57,7 @@ export function TestimonialCarousel({
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <p className="font-serif text-[1.5rem] leading-[1.3] tracking-tight text-white text-balance md:text-[2rem]">
+            <p className="font-quote text-[1.5rem] font-normal leading-[1.3] tracking-tight text-white text-balance md:text-[2rem]">
               &ldquo;{active.quote}&rdquo;
             </p>
             <footer className="mt-8 flex items-center gap-4">

@@ -21,7 +21,7 @@ export function FAQItem({ question, answer, defaultOpen = false }: FAQItemProps)
         onClick={() => setOpen((v) => !v)}
         className="group flex w-full items-center justify-between gap-6 py-6 text-left transition-colors"
       >
-        <span className="font-serif text-[1.125rem] font-medium leading-snug text-cv-black md:text-[1.25rem]">
+        <span className="font-sans text-[1.125rem] font-medium leading-snug text-cv-black md:text-[1.25rem]">
           {question}
         </span>
         <span

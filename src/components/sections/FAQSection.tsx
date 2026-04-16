@@ -18,7 +18,7 @@ const defaultFaqs: FAQ[] = [
   {
     question: "Do you work with startups or only larger companies?",
     answer:
-      "Both. Many of our clients are small and mid-sized businesses that need enterprise-grade thinking without building a full internal team. Our approach scales to your size and budget.",
+      "Both. A lot of our work is with small and mid-sized teams that want serious systems discipline without hiring a full bench in-house. Scope follows your size and budget.",
   },
   {
     question: "What does a typical engagement look like?",
@@ -28,7 +28,7 @@ const defaultFaqs: FAQ[] = [
   {
     question: "How do you handle security and compliance?",
     answer:
-      "Security is part of the build, not an afterthought. Enterprise-grade cybersecurity on the network layer, secure code practices in development, and advisory support for HIPAA, SOC 2, and GDPR where relevant.",
+      "Security is part of the build, not a bolt-on later. We harden networks, treat code review seriously, and bring in HIPAA, SOC 2, or GDPR guidance when your situation calls for it.",
   },
 ];
 
@@ -39,10 +39,10 @@ export function FAQSection({ faqs = defaultFaqs, id = "faq" }: { faqs?: FAQ[]; i
         <div className="text-center">
           <Eyebrow>Frequently asked</Eyebrow>
           <Heading as="h2" size="display-lg" id="faq-heading" className="mt-5">
-            Questions, answered.
+            What people ask before they hire us
           </Heading>
           <Text size="lg" tone="muted" className="mx-auto mt-6 max-w-xl">
-            If something is not here, book a strategy call and ask directly.
+            If it is not here, book a call and ask in plain language.
           </Text>
         </div>
         <div className="mt-14 divide-y divide-cv-black/10">

@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/api/", "/marketplace/order", "/marketplace/status/"],
+        disallow: ["/api/"],
       },
     ],
     sitemap: "https://www.centervert.com/sitemap.xml",

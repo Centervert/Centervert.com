@@ -30,12 +30,12 @@ export function FinalCTA() {
           id="final-cta-heading"
           className="mt-5"
         >
-          Your systems can do{" "}
-          <span className="text-cv-black/35">more.</span>
+          Pick a time.{" "}
+          <span className="text-cv-black/35">We skip the deck.</span>
         </Heading>
         <Text size="lg" tone="muted" className="mx-auto mt-6 max-w-xl">
-          Book a 30-minute strategy call. No commitment, no pitch deck. A clear
-          conversation about where you are and where you want to go.
+          Thirty minutes on the calendar. No commitment, no slide stack, just a
+          straight conversation about where you are and what is actually broken.
         </Text>
         <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Button
@@ -56,7 +56,7 @@ export function FinalCTA() {
           </Button>
         </div>
         <p className="mt-6 text-[12.5px] text-cv-black/40">
-          Free strategy call. No commitment required.
+          Free strategy call. Cancel if your calendar shifts.
         </p>
       </div>
     </Section>

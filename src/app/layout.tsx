@@ -5,14 +5,14 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.centervert.com"),
   icons: {
-    icon: "/icon.png",
+    icon: "/brand/logos/centervert.logo.icon.smoke.png",
   },
   title: {
     default: "Centervert | The systems your business runs on.",
     template: "%s | Centervert",
   },
   description:
-    "Centervert helps businesses plan, build, implement, and support the systems they rely on to operate. AI, software, infrastructure, and managed services from one Greenville, SC team.",
+    "Software, infrastructure, automation, and managed support from one Greenville, SC team. Planning through rollout, with people who answer after go-live.",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     siteName: "Centervert",
     title: "Centervert | The systems your business runs on.",
     description:
-      "Plan, build, implement, and support the systems your business runs on. One Greenville, SC team.",
+      "One partner for the systems you run on: apps, wiring, automation, and the help desk behind them. Based in Greenville, SC.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Centervert | The systems your business runs on.",
     description:
-      "Plan, build, implement, and support the systems your business runs on. One Greenville, SC team.",
+      "Greenville, SC team for software, low voltage, automation, and managed IT without juggling four vendors.",
   },
 };
 
@@ -62,7 +62,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${effra.variable} ${recia.variable}`}>
+    <html
+      lang="en"
+      className={`${effra.variable} ${recia.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <body className="antialiased">
         {children}
         <script

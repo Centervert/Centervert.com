@@ -1,20 +1,20 @@
 import Image from "next/image";
-import { CheckCircle2, Rocket } from "lucide-react";
+import { Rocket } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow, Heading, Text } from "@/components/ui/typography";
 import { Button } from "@/components/ui/Button";
 import { routes } from "@/lib/routes";
 
 const topics = [
-  "Prompt Engineering",
-  "AI Tool Selection",
-  "Workflow Automation",
-  "Team Implementation",
+  "Prompting on your real accounts",
+  "Picking tools that fit the stack you already pay for",
+  "Automation people will run after we leave",
+  "Rollout with your team in the room, not a slide tour",
 ];
 
 export function AITrainingCallout() {
   return (
-    <Section tone="dark" padding="lg" ariaLabelledBy="ai-training-heading" className="isolate">
+    <Section tone="dark" padding="lg" ariaLabelledBy="scale-up-heading" className="isolate">
       <Image
         src="/brand/space/centervert.space.overlay.3.jpg"
         alt=""
@@ -32,28 +32,29 @@ export function AITrainingCallout() {
       />
       <div className="grid gap-12 md:grid-cols-12 md:items-center md:gap-16">
         <div className="md:col-span-6">
-          <Eyebrow className="text-white/60">AI In Person</Eyebrow>
+          <Eyebrow className="text-white/60">Scale Up by Centervert</Eyebrow>
           <Heading
             as="h2"
             size="display-lg"
-            id="ai-training-heading"
+            id="scale-up-heading"
             className="mt-5 text-white"
           >
             Teach your team to{" "}
             <span className="text-white/50">actually use AI.</span>
           </Heading>
           <Text size="lg" tone="inverse-muted" className="mt-6 max-w-lg">
-            Hands-on sessions for your business. Prompting, tool selection, workflow
-            automation, and real implementation. Not theory.
+            Scale Up is Centervert&apos;s education and outreach initiative. Hands-on
+            work on your accounts and workflows. If it feels like a conference
+            session, we are doing it wrong.
           </Text>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button
-              href={routes.bookTraining}
+              href={routes.scaleUpEvents}
               variant="primary"
               size="md"
               leadingIcon={<Rocket className="h-4 w-4" />}
             >
-              Join a session
+              Events and RSVP
             </Button>
             <Button
               href={routes.book}
@@ -67,17 +68,16 @@ export function AITrainingCallout() {
         </div>
 
         <div className="md:col-span-6">
-          <ul className="grid grid-cols-2 gap-4">
-            {topics.map((topic) => (
-              <li
-                key={topic}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition-colors hover:bg-white/[0.06]"
-              >
-                <CheckCircle2 className="h-5 w-5 text-highlight" />
-                <p className="mt-4 font-medium text-white">{topic}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm md:p-10">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.12em] text-white/50">
+              What a week often includes
+            </p>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-[14.5px] text-white/85 marker:text-highlight">
+              {topics.map((topic) => (
+                <li key={topic}>{topic}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </Section>

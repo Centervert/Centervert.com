@@ -67,7 +67,7 @@ export function ServicePage({ service, faqs }: ServicePageProps) {
                   <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-evergreen text-highlight">
                     <Icon className="h-7 w-7" />
                   </span>
-                  <p className="mt-6 font-serif text-[1.25rem] font-medium leading-snug text-cv-black md:text-[1.375rem]">
+                  <p className="mt-6 font-sans text-[1.25rem] font-medium leading-snug text-cv-black md:text-[1.375rem]">
                     {service.tagline}
                   </p>
                   <p className="mt-3 text-[14px] text-cv-black/55">
@@ -167,7 +167,7 @@ export function ServicePage({ service, faqs }: ServicePageProps) {
                       <RIcon className="h-5 w-5" />
                     </span>
                     <div>
-                      <h3 className="font-serif text-[1.25rem] font-medium leading-tight text-cv-black">
+                      <h3 className="font-sans text-[1.25rem] font-medium leading-tight text-cv-black">
                         {r.title}
                       </h3>
                       <p className="mt-2 text-[14px] text-cv-black/55">{r.tagline}</p>

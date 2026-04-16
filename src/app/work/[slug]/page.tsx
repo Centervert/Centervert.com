@@ -89,7 +89,7 @@ export default async function Page({
                 key={m.label}
                 className="rounded-2xl border border-cv-black/5 bg-smoke/60 p-6 text-center sm:p-8"
               >
-                <div className="font-serif text-[2.5rem] font-medium leading-none tracking-tight text-evergreen sm:text-[3rem] lg:text-[3.25rem]">
+                <div className="font-sans text-[2.5rem] font-medium leading-none tracking-tight text-evergreen sm:text-[3rem] lg:text-[3.25rem]">
                   {m.value}
                 </div>
                 <p className="mt-3 text-[13px] leading-snug text-cv-black/55 sm:text-[13.5px]">
@@ -110,7 +110,7 @@ export default async function Page({
               <div className="sticky top-28 space-y-8">
                 <div>
                   <Eyebrow>The Client</Eyebrow>
-                  <p className="mt-3 font-serif text-[1.25rem] font-medium text-cv-black">
+                  <p className="mt-3 font-sans text-[1.25rem] font-medium text-cv-black">
                     {cs.client}
                   </p>
                   <p className="mt-2 text-[13.5px] text-cv-black/55">
@@ -210,7 +210,7 @@ export default async function Page({
                 {/* Quote */}
                 <figure className="relative rounded-3xl border border-cv-black/5 bg-evergreen p-10 text-white shadow-[var(--shadow-3)]">
                   <Quote className="h-8 w-8 text-highlight/70" />
-                  <blockquote className="mt-4 font-serif text-[1.5rem] leading-tight text-white text-balance md:text-[1.75rem]">
+                  <blockquote className="font-quote mt-4 text-[1.5rem] font-normal leading-tight text-white text-balance md:text-[1.75rem]">
                     &ldquo;{cs.quote.text}&rdquo;
                   </blockquote>
                   <figcaption className="mt-6 text-[13.5px] text-white/70">
@@ -251,7 +251,7 @@ export default async function Page({
                         </Badge>
                       ))}
                     </div>
-                    <h3 className="font-serif text-[1.5rem] font-medium leading-tight text-cv-black">
+                    <h3 className="font-sans text-[1.5rem] font-medium leading-tight text-cv-black">
                       {o.title}
                     </h3>
                     <p className="text-[14px] text-cv-black/55">{o.summary}</p>

@@ -48,7 +48,7 @@ export function CapabilitiesGrid() {
                   <ArrowUpRight className="h-5 w-5 text-cv-black/25 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-evergreen" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[1.5rem] font-medium leading-tight text-cv-black">
+                  <h3 className="font-sans text-[1.5rem] font-medium leading-tight text-cv-black">
                     {service.title}
                   </h3>
                   <p className="mt-2 text-[14.5px] leading-relaxed text-cv-black/55">

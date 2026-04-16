@@ -52,7 +52,7 @@ export const services: Service[] = [
     lifecycle: ["plan", "build"],
     tagline: "Built around how your business actually works.",
     description:
-      "We design and build software that fits the way your business operates. When off-the-shelf tools stop fitting, custom software is often the cleanest way to unlock the next stage of growth.",
+      "We design and build software around how your business actually runs. When off-the-shelf tools start fighting each other, a focused build is often cheaper than another subscription bandage.",
     highlights: [
       "Web applications on React, Next.js, Supabase, and PostgreSQL",
       "Mobile apps for iOS and Android with React Native or Expo",
@@ -104,7 +104,7 @@ export const services: Service[] = [
     lifecycle: ["implement"],
     tagline: "Software lives in a real environment.",
     description:
-      "We design and install the physical layer of the systems businesses run on. Networking, cabling, AV, and control systems, integrated with the software side so the whole ecosystem works together.",
+      "We design and install the physical layer: networking, cabling, AV, and control. We care that what is in the rack matches what runs on the screen.",
     highlights: [
       "Conference room AV: cameras, microphones, displays, control",
       "Access control and surveillance",
@@ -122,7 +122,7 @@ export const services: Service[] = [
     lifecycle: ["support"],
     tagline: "Ongoing partnership, not a helpdesk ticket.",
     description:
-      "We stay involved after the build. Managed IT covers the ongoing support, security, and optimization layer so the systems we deliver keep working as your business grows.",
+      "We stay involved after the build: patching, monitoring, help desk, and security work so the thing we shipped still behaves when your headcount doubles.",
     highlights: [
       "Endpoint management and patching",
       "Network monitoring with UniFi and Cisco",

@@ -14,6 +14,7 @@ type NavLink = { label: string; href: string };
 const primaryLinks: NavLink[] = [
   { label: "Services", href: routes.services.index },
   { label: "Work", href: routes.work },
+  { label: "Scale Up", href: routes.scaleUp },
   { label: "About", href: routes.about },
   { label: "News", href: routes.news },
   { label: "Contact", href: routes.contact },
@@ -93,15 +94,6 @@ export function Nav({ overDark = false }: NavProps) {
           </div>
 
           <div className="flex items-center gap-3">
-            <Link
-              href={routes.bookTraining}
-              className={cn(
-                "hidden text-[13.5px] font-medium transition-colors md:inline-flex",
-                linkClass
-              )}
-            >
-              AI Training
-            </Link>
             <Button
               href={routes.book}
               size="sm"

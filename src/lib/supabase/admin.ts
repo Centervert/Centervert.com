@@ -2,7 +2,8 @@ import { createClient } from "@supabase/supabase-js";
 
 /**
  * Server-only Supabase client with service role key.
- * Use only for calendar_connections (RLS blocks anon) and other admin operations.
+ * Use for server-side inserts that must bypass RLS: bookings, scale_up_rsvps,
+ * calendar_connections when wired, etc.
  * Never expose this client to the browser.
  */
 export function createAdminClient() {

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Centervert | The systems your business runs on. One partner.",
   },
   description:
-    "Centervert helps businesses plan, build, implement, and support the systems they rely on to operate. AI, software, infrastructure, and managed services from one Greenville, SC team.",
+    "Software, infrastructure, automation, and managed support from one Greenville, SC team. Planning through rollout, with people who answer after go-live.",
 };
 
 export default function Home() {

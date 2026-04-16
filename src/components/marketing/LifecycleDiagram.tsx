@@ -87,7 +87,7 @@ export function LifecycleDiagram() {
                 </span>
               </div>
               <div>
-                <div className="font-serif text-[1.25rem] font-medium leading-tight text-cv-black sm:text-[1.5rem]">
+                <div className="font-sans text-[1.25rem] font-medium leading-tight text-cv-black sm:text-[1.5rem]">
                   {lifecycleLabels[stage]}
                 </div>
                 <div className="mt-1 text-[12px] text-cv-black/50 sm:text-[13px]">
@@ -127,7 +127,7 @@ export function LifecycleDiagram() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-evergreen">
                 {lifecycleLabels[active]}
               </p>
-              <h3 className="mt-3 font-serif text-[1.5rem] font-medium leading-[1.15] tracking-tight text-cv-black sm:text-[1.75rem] md:text-[2.25rem] md:leading-[1.1]">
+              <h3 className="mt-3 font-sans text-[1.5rem] font-medium leading-[1.15] tracking-tight text-cv-black sm:text-[1.75rem] md:text-[2.25rem] md:leading-[1.1]">
                 {stageCopy[active].headline}
               </h3>
               <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-cv-black/60 md:text-base">

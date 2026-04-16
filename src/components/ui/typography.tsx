@@ -8,12 +8,14 @@ import { cn } from "@/lib/cn";
 type EyebrowProps = {
   as?: ElementType;
   className?: string;
+  id?: string;
   children: ReactNode;
 };
 
-export function Eyebrow({ as: Tag = "p", className, children }: EyebrowProps) {
+export function Eyebrow({ as: Tag = "p", className, id, children }: EyebrowProps) {
   return (
     <Tag
+      id={id}
       className={cn(
         "inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-cv-black/40",
         className
@@ -25,8 +27,8 @@ export function Eyebrow({ as: Tag = "p", className, children }: EyebrowProps) {
 }
 
 /* -------------------------------------------------------------------------
-   Heading: editorial display (Recia serif) at display sizes, Effra sans at
-   h3+. Override family via `font="serif"` or `font="sans"`.
+   Heading: Recia at all sizes (primary brand type). Optional `font` prop is
+   kept for API compatibility; both values map to the same family.
    ------------------------------------------------------------------------- */
 
 type HeadingLevel = 1 | 2 | 3 | 4;
@@ -52,12 +54,9 @@ const sizeClasses: Record<HeadingSize, string> = {
   h4: "text-[1.25rem] md:text-[1.375rem] leading-[1.3] font-semibold tracking-tight",
 };
 
-const serifSizes: HeadingSize[] = ["display-2xl", "display-xl", "display-lg", "h1", "h2"];
-
 type HeadingProps = {
   as?: `h${HeadingLevel}` | "p" | "span" | "div";
   size?: HeadingSize;
-  font?: "serif" | "sans";
   balance?: boolean;
   className?: string;
   children: ReactNode;
@@ -67,19 +66,17 @@ type HeadingProps = {
 export function Heading({
   as: Tag = "h2",
   size = "h2",
-  font,
   balance = true,
   className,
   children,
   id,
 }: HeadingProps) {
-  const useSerif = font ? font === "serif" : serifSizes.includes(size);
   return (
     <Tag
       id={id}
       className={cn(
         sizeClasses[size],
-        useSerif ? "font-serif" : "font-sans",
+        "font-sans",
         balance && "text-balance",
         className
       )}

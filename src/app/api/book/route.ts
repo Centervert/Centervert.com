@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function POST(request: NextRequest) {
   try {
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabase = await createClient();
+    const supabase = createAdminClient();
     const { data: booking, error } = await supabase
       .from("bookings")
       .insert({
@@ -69,6 +69,18 @@ export async function POST(request: NextRequest) {
     );
   } catch (e) {
     const message = e instanceof Error ? e.message : "Booking failed";
-    return NextResponse.json({ error: message }, { status: 500 });
+    if (
+      message.includes("Missing NEXT_PUBLIC_SUPABASE_URL") ||
+      message.includes("SUPABASE_SERVICE_ROLE_KEY")
+    ) {
+      return NextResponse.json(
+        { error: "Booking is not configured on the server." },
+        { status: 503 }
+      );
+    }
+    return NextResponse.json(
+      { error: "Booking failed. Please try again or email connect@centervert.com." },
+      { status: 500 }
+    );
   }
 }

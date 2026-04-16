@@ -1,10 +1,10 @@
 import localFont from "next/font/local";
 
 /**
- * Brand fonts loaded through next/font/local for zero layout shift, automatic
- * preloading of the critical weights, and self-hosting. Paths are relative to
- * this file; the assets live in /public/brand/fonts so plain CSS can still
- * reference them as /brand/fonts/... if needed.
+ * Brand fonts via next/font/local. Recia is the default UI family (see
+ * globals.css body and --font-sans). Effra is used for quotes via `font-quote`
+ * / `.font-quote`. Paths are relative to this file; files live in
+ * /public/brand/fonts.
  */
 
 export const effra = localFont({

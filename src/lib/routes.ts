@@ -14,7 +14,13 @@ export const routes = {
   news: "/news",
   book: "/book",
   bookTraining: "/book?type=training",
-  marketplace: "/marketplace",
+  /** Scale Up by Centervert: education, events, RSVP by location */
+  scaleUp: "/scaleup",
+  scaleUpEvents: "/scaleup#events",
+  scaleUpCity: (city: string) => `/scaleup/${city}`,
+  scaleUpEvent: (city: string, eventSlug: string) => `/scaleup/${city}/${eventSlug}`,
+  /** Short ad URL; redirects to the current Greenville event (see next.config.ts). */
+  scaleUpShortGvl: "/gvl",
   services: {
     index: "/#services",
     aiAutomation: "/services/ai-automation",

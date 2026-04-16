@@ -9,14 +9,14 @@ Clear, confident, calm, practical, non-hype. Sound like a systems operator who c
 ## SEO
 
 - **Title:** `Centervert | The systems your business runs on. One partner.`
-- **Meta description:** `Centervert helps businesses plan, build, implement, and support the systems they rely on to operate. AI, software, infrastructure, and managed services from one Greenville, SC team.`
+- **Meta description:** `Software, infrastructure, automation, and managed support from one Greenville, SC team. Planning through rollout, with people who answer after go-live.`
 
 ## Hero
 
 - **Eyebrow:** `Technology. Strategy. Execution.`
 - **Headline (display serif):** `The systems your business runs on.`
 - **Sub-headline (serif lighter weight):** `Planned, built, implemented, and supported by one partner.`
-- **Body (Effra):** `Centervert helps businesses run better through stronger systems. Software, infrastructure, automation, and the people to support it all, from one Greenville team that actually talks to each other.`
+- **Body (Effra):** `Software, infrastructure, automation, and managed support from one Greenville team. You get people who plan it, build it, roll it out, and answer the phone when it misbehaves.`
 - **Primary CTA:** `Book a Strategy Call` → `/book`
 - **Secondary CTA:** `See how we work` → `#lifecycle`
 - **Trust pill:** `"Replaced four vendors with one team." Sarah C., VP Operations`
@@ -68,7 +68,7 @@ Cards (title, lifecycle tags, one-line description, link to service page):
 
 - **Eyebrow:** `Proof`
 - **Headline (editorial):** `One partner. Four vendors retired. A business that actually runs.`
-- Story block: 2 to 3 paragraphs narrating an anchor client (pulled from KB `02-clients/` once confirmed). Stages of the lifecycle as chapter headers inside the story. Pull-quote. Outcome stats inline as small typographic moments.
+- Story block: 2 to 3 paragraphs narrating an anchor client (pulled from KB `02-clients/` once confirmed). Stages of the lifecycle as chapter headers inside the story. Pull-quote. Outcome stats inline as small typographic moments (third stat label in code: `Help desk when the ticket queue does not sleep`).
 - **CTA:** `Read more case studies` → `/work`
 
 ## "Software plus the real world" differentiator
@@ -76,21 +76,22 @@ Cards (title, lifecycle tags, one-line description, link to service page):
 - **Eyebrow:** `Why Centervert`
 - **Headline:** `Software lives in a real environment.`
 - **Sub:** `Most modern software partners stop at the code. Most IT vendors stop at the wires. Centervert does both, which is the difference between a product that looks good in a demo and a system that works in your building on a Monday morning.`
-- Supporting line: `Churches, schools, government offices, hospitality, and growing businesses trust us with the full ecosystem.`
+- **Dark card pill:** `Where we show up`
+- **Bullet list:** matches `RealWorldDifferentiator` proof points in code (no “ecosystem” phrasing on the live card).
 - **CTA:** `See our approach` → `/about`
 
-## AI Training callout (dark statement section)
+## Scale Up callout (dark statement section, `AITrainingCallout.tsx`)
 
-Keep existing copy, reframed:
-
-- **Eyebrow:** `AI In Person`
-- **Headline:** `Teach your team to actually use AI.`
-- **Sub:** `Hands-on sessions for your business. Prompting, tool selection, workflow automation, and real implementation. Not theory.`
-- **CTA primary:** `Join a session` → `/book?type=training`
+- **Eyebrow:** `Scale Up by Centervert`
+- **Headline:** `Teach your team to actually use AI.` (second line in muted white)
+- **Sub:** `Scale Up is Centervert's education and outreach initiative.` then existing hands-on / conference-session lines.
+- **Right column:** small label `What a week often includes` plus disc list (see component for exact bullets).
+- **CTA primary:** `Events and RSVP` → `/scaleup#events` (`routes.scaleUpEvents`)
 - **CTA secondary:** `Book private training` → `/book`
-- Topics (kept): Prompt Engineering, AI Tool Selection, Workflow Automation, Team Implementation.
 
 ## Testimonial carousel
+
+- **H2:** `After the handoff, they still picked up.`
 
 Three to five testimonials, single card at a time, auto-rotate with pause on hover. Each card: quote, name, role, company, optional logo.
 
@@ -99,22 +100,22 @@ Placeholder content until real approved quotes land. Draft first quote:
 
 ## FAQ
 
-Keep the existing 5, light edits to match new voice:
+Section heading (H2): `What people ask before they hire us`. Intro line: `If it is not here, book a call and ask in plain language.`
 
 1. **What makes Centervert different from a typical IT company?** — We work across the full lifecycle. Software, platforms, infrastructure, and managed support all from one team that understands how they connect.
 2. **Can you work with our existing tools and platforms?** — Yes. We can often improve what you already have instead of replacing it. Salesforce, HubSpot, ClickUp, Monday, Go High Level, Microsoft 365, Google Workspace, and many more.
-3. **Do you work with startups or only larger companies?** — Both. Many of our clients are small and mid-sized businesses that need enterprise-grade thinking without building a full internal team.
+3. **Do you work with startups or only larger companies?** — Both. A lot of our work is with small and mid-sized teams that want serious systems discipline without hiring a full bench in-house. Scope follows your size and budget.
 4. **What does a typical engagement look like?** — It starts with a strategy call. We scope one focused plan, execute, and stay available as the systems evolve. Most clients start with one capability and expand as they see results.
-5. **How do you handle security and compliance?** — Security is part of the build, not an afterthought. We can advise on HIPAA, SOC 2, and GDPR where relevant.
+5. **How do you handle security and compliance?** — Security is part of the build, not a bolt-on later. We harden networks, treat code review seriously, and bring in HIPAA, SOC 2, or GDPR guidance when your situation calls for it.
 
 ## Final CTA
 
 - **Eyebrow:** `Get Started`
-- **Headline:** `Your systems can do more.`
-- **Sub:** `Book a 30-minute strategy call. No commitment, no pitch deck, just a clear conversation about where you are and where you want to go.`
+- **Headline:** `Pick a time. We skip the deck.`
+- **Sub:** `Thirty minutes on the calendar. No commitment, no slide stack, just a straight conversation about where you are and what is actually broken.`
 - **Primary CTA:** `Book a Strategy Call` → `/book`
 - **Secondary CTA:** `Call (864) 987-8282` → `tel:8649878282`
-- **Fine print:** `Free strategy call. Cancel anytime.`
+- **Fine print:** `Free strategy call. Cancel if your calendar shifts.`
 
 ## Footer
 

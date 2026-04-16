@@ -65,7 +65,7 @@ export default function Page() {
                         {cs.industry} &middot; {cs.year}
                       </span>
                     </div>
-                    <h3 className="mt-5 font-serif text-[2rem] font-medium leading-[1.1] tracking-tight text-cv-black md:text-[2.5rem]">
+                    <h3 className="mt-5 font-sans text-[2rem] font-medium leading-[1.1] tracking-tight text-cv-black md:text-[2.5rem]">
                       {cs.title}
                     </h3>
                     <p className="mt-5 max-w-2xl text-[15.5px] leading-relaxed text-cv-black/60">
@@ -83,7 +83,7 @@ export default function Page() {
                           key={m.label}
                           className="rounded-2xl border border-cv-black/5 bg-white p-4 sm:p-5"
                         >
-                          <div className="font-serif text-[1.35rem] font-medium leading-none tracking-tight text-evergreen sm:text-[1.5rem] md:text-[1.75rem]">
+                          <div className="font-sans text-[1.35rem] font-medium leading-none tracking-tight text-evergreen sm:text-[1.5rem] md:text-[1.75rem]">
                             {m.value}
                           </div>
                           <p className="mt-2 text-[11.5px] leading-snug text-cv-black/55 sm:text-[12.5px]">

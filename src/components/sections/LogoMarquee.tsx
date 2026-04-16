@@ -28,7 +28,7 @@ export function LogoMarquee() {
     >
       <Container size="wide">
         <p className="mb-8 text-center text-[12px] font-semibold uppercase tracking-[0.18em] text-cv-black/40">
-          Built for the tools your business already runs on
+          We connect into the tools your business already runs on
         </p>
       </Container>
       <Marquee

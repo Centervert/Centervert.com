@@ -91,7 +91,7 @@ export default function NewsPage() {
                       <span className="text-[12px] text-cv-black/40">{p.readTime}</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-serif text-[1.375rem] font-medium leading-tight text-cv-black">
+                      <h3 className="font-sans text-[1.375rem] font-medium leading-tight text-cv-black">
                         {p.title}
                       </h3>
                       <p className="mt-3 text-[14px] leading-relaxed text-cv-black/55">

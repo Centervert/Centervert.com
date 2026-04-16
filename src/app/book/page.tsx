@@ -160,7 +160,7 @@ export default function BookPage() {
             <div className="rounded-3xl border border-cv-black/5 bg-smoke/60 p-6 sm:p-10">
               {step === "date" && (
                 <div>
-                  <h2 className="flex items-center gap-2 font-serif text-[1.375rem] font-medium text-cv-black">
+                  <h2 className="flex items-center gap-2 font-sans text-[1.375rem] font-medium text-cv-black">
                     <Calendar className="h-5 w-5 text-evergreen" />
                     Choose a day
                   </h2>
@@ -191,7 +191,7 @@ export default function BookPage() {
                   >
                     ← Change day
                   </button>
-                  <h2 className="flex items-center gap-2 font-serif text-[1.375rem] font-medium text-cv-black">
+                  <h2 className="flex items-center gap-2 font-sans text-[1.375rem] font-medium text-cv-black">
                     <Clock className="h-5 w-5 text-evergreen" />
                     Available times
                   </h2>
@@ -238,7 +238,7 @@ export default function BookPage() {
                   <p className="mb-6 text-[13px] text-cv-black/60">
                     {selectedDate} at {formatSlotTime(selectedSlot.start)}
                   </p>
-                  <h2 className="flex items-center gap-2 font-serif text-[1.375rem] font-medium text-cv-black">
+                  <h2 className="flex items-center gap-2 font-sans text-[1.375rem] font-medium text-cv-black">
                     <User className="h-5 w-5 text-evergreen" />
                     Your details
                   </h2>

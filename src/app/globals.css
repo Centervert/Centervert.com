@@ -14,8 +14,9 @@
   --background: #F7F7F2;
   --foreground: #0F0F0F;
 
-  /* Fonts — next/font sets --font-effra-local and --font-recia-local
-     on <html>. We alias them to --font-effra / --font-recia. */
+  /* Fonts — next/font sets --font-effra-local and --font-recia-local on <html>.
+     Recia is the primary UI type (matches wordmark weight on headings). Effra is
+     reserved for quotes and similar callouts via .font-quote / font-quote. */
   --font-effra: var(--font-effra-local), ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
   --font-recia: var(--font-recia-local), ui-serif, Georgia, Cambria, "Times New Roman", serif;
   --font-mono: ui-monospace, "JetBrains Mono", Menlo, Monaco, "Courier New", monospace;
@@ -163,8 +164,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-effra);
+  --font-sans: var(--font-recia);
   --font-serif: var(--font-recia);
+  --font-quote: var(--font-effra);
   --font-mono: var(--font-mono);
 
   /* Brand */
@@ -254,7 +256,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-effra);
+  font-family: var(--font-recia);
   font-size: var(--text-body);
   line-height: var(--leading-body);
 }
@@ -278,6 +280,10 @@ body {
   font-family: var(--font-recia);
   font-weight: 500;
   letter-spacing: var(--tracking-display);
+}
+
+.font-quote {
+  font-family: var(--font-effra);
 }
 
 .text-balance {

@@ -45,9 +45,9 @@ export function RealWorldDifferentiator() {
             />
             <div className="relative">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-white/80 backdrop-blur-sm">
-                The full ecosystem
+                Where we show up
               </div>
-              <h3 className="mt-6 font-serif text-[1.75rem] font-medium leading-tight md:text-[2rem]">
+              <h3 className="mt-6 font-sans text-[1.75rem] font-medium leading-tight md:text-[2rem]">
                 From the browser to the breaker room.
               </h3>
               <ul className="mt-6 space-y-3">

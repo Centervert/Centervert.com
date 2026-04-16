@@ -21,6 +21,15 @@ const nextConfig: NextConfig = {
     };
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/gvl",
+        destination: "/scaleup/greenville/may-7-2026",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
