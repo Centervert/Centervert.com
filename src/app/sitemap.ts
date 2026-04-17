@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { caseStudies } from "@/lib/case-studies";
+import { posts } from "@/lib/posts";
 import { services } from "@/lib/services";
 import { scaleUpEvents } from "@/lib/scale-up-events";
 
@@ -14,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/careers`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/news`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...posts.map((p) => ({
+      url: `${baseUrl}/news/${p.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    })),
     { url: `${baseUrl}/book`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/scaleup`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
