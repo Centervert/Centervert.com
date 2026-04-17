@@ -17,6 +17,8 @@ import { EventAgenda } from "@/components/scaleup/EventAgenda";
 import { EventWalkaway } from "@/components/scaleup/EventWalkaway";
 import { EventRSVPForm } from "@/components/scaleup/EventRSVPForm";
 import { EventFooterCTA } from "@/components/scaleup/EventFooterCTA";
+import { EventWalkawayProse } from "@/components/scaleup/EventWalkawayProse";
+import { InlineBoldText } from "@/components/scaleup/InlineBoldText";
 
 type PageParams = { city: string; event: string };
 
@@ -62,7 +64,8 @@ function EventJsonLd({ event }: { event: ScaleUpEvent }) {
     "@type": "Event",
     name: `Scale Up ${event.cityDisplay} — ${event.date.display}, ${event.date.year}`,
     description: event.subhead,
-    startDate: event.date.iso,
+    startDate: event.schemaStartAt ?? `${event.date.iso}T12:00:00`,
+    ...(event.schemaEndAt ? { endDate: event.schemaEndAt } : {}),
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
@@ -116,11 +119,17 @@ export default async function ScaleUpEventPage({
         <Section tone="white" padding="lg" bordered ariaLabelledBy="video-heading">
           <div className="mx-auto max-w-3xl text-center">
             <Eyebrow as="h2" id="video-heading">
-              A quick look from Luke
+              {event.videoIntro?.eyebrow ?? "A quick look from Luke"}
             </Eyebrow>
-            <Heading as="p" size="display-lg" className="mt-5">
-              Ninety seconds on what this morning is, and what it is not.
-            </Heading>
+            {event.videoIntro?.title ? (
+              <Heading as="p" size="display-lg" className="mt-5">
+                {event.videoIntro.title}
+              </Heading>
+            ) : event.videoIntro ? null : (
+              <Heading as="p" size="display-lg" className="mt-5">
+                Ninety seconds on what this morning is, and what it is not.
+              </Heading>
+            )}
           </div>
           <div className="mt-12">
             <EventVideo event={event} />
@@ -129,26 +138,41 @@ export default async function ScaleUpEventPage({
 
         <Section tone="smoke" padding="lg" ariaLabelledBy="room-heading">
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>What happens in the room</Eyebrow>
+            <Eyebrow>
+              {event.roomSection?.eyebrow ?? "What happens in the room"}
+            </Eyebrow>
             <Heading
               as="h2"
               size="display-lg"
               id="room-heading"
               className="mt-5"
             >
-              A working session, not a keynote.
+              {event.roomSection?.title ?? "A working session, not a keynote."}
             </Heading>
-            <div className="mx-auto mt-8 space-y-5">
-              {event.room.map((paragraph) => (
-                <Text
-                  key={paragraph}
-                  size="lg"
-                  tone="muted"
-                  className="mx-auto"
-                >
-                  {paragraph}
-                </Text>
-              ))}
+            <div className="mx-auto mt-8 space-y-5 text-left md:text-center">
+              {event.roomSection ? (
+                event.roomSection.paragraphs.map((paragraph) => (
+                  <Text
+                    key={paragraph}
+                    size="lg"
+                    tone="muted"
+                    className="mx-auto max-w-2xl md:text-center"
+                  >
+                    <InlineBoldText text={paragraph} />
+                  </Text>
+                ))
+              ) : (
+                event.room.map((paragraph) => (
+                  <Text
+                    key={paragraph}
+                    size="lg"
+                    tone="muted"
+                    className="mx-auto"
+                  >
+                    {paragraph}
+                  </Text>
+                ))
+              )}
             </div>
             {event.venue.logo ? (
               <div className="mt-12 flex flex-col items-center gap-4">
@@ -169,14 +193,16 @@ export default async function ScaleUpEventPage({
 
         <Section tone="white" padding="lg" bordered ariaLabelledBy="agenda-heading">
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>What we cover</Eyebrow>
+            <Eyebrow>
+              {event.agendaIntro?.eyebrow ?? "What we cover"}
+            </Eyebrow>
             <Heading
               as="h2"
               size="display-lg"
               id="agenda-heading"
               className="mt-5"
             >
-              Four things we will actually work on.
+              {event.agendaIntro?.title ?? "Four things we will actually work on."}
             </Heading>
           </div>
           <div className="mx-auto mt-14 max-w-5xl">
@@ -186,18 +212,25 @@ export default async function ScaleUpEventPage({
 
         <Section tone="smoke" padding="lg" ariaLabelledBy="walkaway-heading">
           <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>What you walk out with</Eyebrow>
+            <Eyebrow>
+              {event.walkawayProse?.eyebrow ?? "What you walk out with"}
+            </Eyebrow>
             <Heading
               as="h2"
               size="display-lg"
               id="walkaway-heading"
               className="mt-5"
             >
-              Not a deck. Something you can use Monday.
+              {event.walkawayProse?.title ??
+                "Not a deck. Something you can use Monday."}
             </Heading>
           </div>
           <div className="mx-auto mt-12 max-w-4xl">
-            <EventWalkaway items={event.walkaway} />
+            {event.walkawayProse ? (
+              <EventWalkawayProse paragraphs={event.walkawayProse.paragraphs} />
+            ) : (
+              <EventWalkaway items={event.walkaway} />
+            )}
           </div>
         </Section>
 
@@ -209,13 +242,23 @@ export default async function ScaleUpEventPage({
           >
             <div className="mx-auto max-w-3xl text-center">
               <Eyebrow className="text-white/50" as="h2" id="proof-heading">
-                From clients on the other side of the work
+                {event.testimonialsIntro?.eyebrow ??
+                  "From clients on the other side of the work"}
               </Eyebrow>
+              {event.testimonialsIntro ? (
+                <Heading
+                  as="p"
+                  size="display-lg"
+                  className="mt-5 text-white"
+                >
+                  {event.testimonialsIntro.title}
+                </Heading>
+              ) : null}
             </div>
             <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
-              {event.testimonials.map((t) => (
+              {event.testimonials.map((t, i) => (
                 <figure
-                  key={t.name}
+                  key={`${t.name}-${i}`}
                   className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm"
                 >
                   <blockquote className="font-quote text-[1.25rem] font-normal leading-snug text-white md:text-[1.5rem]">

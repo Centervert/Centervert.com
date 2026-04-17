@@ -60,11 +60,17 @@ export function EventHero({ event }: Props) {
             {event.subhead}
           </p>
 
+          {event.sessionCaption ? (
+            <p className="mt-1 max-w-lg text-[12.5px] font-semibold uppercase tracking-[0.14em] text-white/60">
+              {event.sessionCaption}
+            </p>
+          ) : null}
+
           <a
             href="#rsvp"
             className="inline-flex h-12 items-center justify-center rounded-full bg-highlight px-9 text-[15px] font-semibold text-cv-black transition-colors hover:bg-highlight-400 md:h-14 md:px-10"
           >
-            Reserve my seat
+            {event.heroCtaLabel ?? "Reserve my seat"}
           </a>
 
           <div className="flex w-full flex-col items-stretch justify-center gap-1 rounded-2xl border border-white/12 bg-cv-black/40 p-1 backdrop-blur-md sm:flex-row sm:gap-0 sm:p-0">
