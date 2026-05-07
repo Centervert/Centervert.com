@@ -22,6 +22,7 @@ import { EventRSVPForm } from "@/components/scaleup/EventRSVPForm";
 import { EventFooterCTA } from "@/components/scaleup/EventFooterCTA";
 import { EventWalkawayProse } from "@/components/scaleup/EventWalkawayProse";
 import { InlineBoldText } from "@/components/scaleup/InlineBoldText";
+import { MetaPixel } from "@/components/marketing/MetaPixel";
 
 type PageParams = { city: string };
 
@@ -187,6 +188,7 @@ export default async function ScaleUpCityPage({
   if (!event) {
     return (
       <div className="min-h-screen bg-smoke">
+        <MetaPixel event="PageView" />
         <EventMinimalHeader />
         <main>
           <Section tone="white" padding="lg">
@@ -216,6 +218,7 @@ export default async function ScaleUpCityPage({
 
   return (
     <div className="min-h-screen bg-smoke">
+      <MetaPixel event="PageView" />
       <EventJsonLd event={event} cityUrl={cityUrl} />
       <EventMinimalHeader />
       <main>
