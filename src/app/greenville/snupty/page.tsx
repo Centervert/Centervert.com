@@ -194,7 +194,7 @@ export default function GreenvilleSnuptyPage() {
   return (
     <div className="min-h-screen bg-smoke">
       <MetaPixel event="Lead" />
-      <EventMinimalHeader />
+      <EventMinimalHeader logoHeight={44} />
       <main>
         {event ? <ConfirmedHero event={event} /> : <FallbackHero />}
 
