@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow, Heading, Text } from "@/components/ui/typography";
 import {
+  findNextEventForCity,
   findScaleUpEvent,
   scaleUpEvents,
   type ScaleUpEvent,
@@ -19,6 +20,7 @@ import { EventRSVPForm } from "@/components/scaleup/EventRSVPForm";
 import { EventFooterCTA } from "@/components/scaleup/EventFooterCTA";
 import { EventWalkawayProse } from "@/components/scaleup/EventWalkawayProse";
 import { InlineBoldText } from "@/components/scaleup/InlineBoldText";
+import { PastEventOverlay } from "@/components/scaleup/PastEventOverlay";
 
 type PageParams = { city: string; event: string };
 
@@ -109,9 +111,15 @@ export default async function ScaleUpEventPage({
     notFound();
   }
 
+  const nextEvent =
+    event.status === "past" ? findNextEventForCity(event.city) ?? null : null;
+
   return (
     <div className="min-h-screen bg-smoke">
       <EventJsonLd event={event} />
+      {event.status === "past" ? (
+        <PastEventOverlay pastEvent={event} nextEvent={nextEvent} />
+      ) : null}
       <EventMinimalHeader />
       <main>
         <EventHero event={event} />

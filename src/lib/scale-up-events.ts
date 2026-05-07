@@ -117,8 +117,156 @@ export const scaleUpEvents: ScaleUpEvent[] = [
   {
     city: "greenville",
     cityDisplay: "Greenville",
-    slug: "may-7-2026",
+    slug: "may-27-2026",
     status: "upcoming",
+
+    audienceLabel: "ATTN: Greenville business owners",
+    headline: {
+      lead: "Are You Ready to ",
+      highlight: "Automate",
+      tail: " and Scale Your Business?",
+    },
+    subhead:
+      "Without staying trapped as the person your business can't run without.",
+
+    date: { iso: "2026-05-27", display: "Wednesday, May 27", year: "2026" },
+    time: "11:30 AM – 1:00 PM",
+    venue: {
+      name: "ROAM Greenville",
+      address: "2 W Washington St, Suite 200, Greenville, SC 29601",
+      mapsUrl: "https://maps.apple.com/?q=ROAM+2+W+Washington+St+Suite+200+Greenville+SC+29601",
+      logo: "/scaleup/greenville/may-27-2026/roam-logo.png",
+      heroImage: "/scaleup/greenville/may-27-2026/roam.jpg",
+      heroImageAlt:
+        "ROAM Greenville coworking lounge with warm lighting, leather seating, and modern décor",
+    },
+
+    seats: { cap: 30 },
+    host: { name: "Luke Pauldine", role: "Scale Up host, Centervert" },
+
+    sessionCaption: "Live in-person working session · 90 minutes",
+    heroCtaLabel: "I'm ready to scale",
+    schemaStartAt: "2026-05-27T11:30:00-04:00",
+    schemaEndAt: "2026-05-27T13:00:00-04:00",
+
+    videoIntro: {
+      eyebrow: "Watch this first before you register",
+    },
+
+    video: {
+      kind: "mov",
+      src: "https://vipun5zdihpgupx9.public.blob.vercel-storage.com/Scale%20Up%20-%20Thursday%20May%207th%20Event.mov",
+      poster: "/scaleup/greenville/may-27-2026/roam.jpg",
+      label: "Watch this first before you register",
+      autoplayMuted: true,
+      aspect: "16/9",
+    },
+
+    roomSection: {
+      eyebrow: "What to expect",
+      title: "What actually happens in the room",
+      paragraphs: [
+        "This isn't a seminar. **There are no motivational talks.**",
+        "It's a working session. We map your business live: your bottlenecks, your manual processes, where your time is leaking. Then we build a real automation plan around what we find.",
+        "You'll leave with something specific to your business. **Not a template. Not homework. An actual plan.**",
+      ],
+    },
+
+    room: [
+      "It's a working session. We map your business live, then build a real automation plan around what we find.",
+      "You'll leave with something specific to your business. Not a template. An actual plan.",
+    ],
+
+    agendaIntro: {
+      eyebrow: "Agenda",
+      title: "What we cover",
+    },
+
+    agenda: [
+      {
+        n: "01",
+        title:
+          "Why You're the Bottleneck and the Exact Systems to Get Out of That Position",
+        body: "If you're stuck because the business was built around you instead of around systems, we show you exactly where that's happening and how to fix it.",
+      },
+      {
+        n: "02",
+        title: "How to Build a Business That Generates Revenue When You Step Away",
+        body: "If you're the key man risk in your business, this is what needs to exist inside your business so it can run without you.",
+      },
+      {
+        n: "03",
+        title: "We Map Your Bottlenecks Live in the Room",
+        body: "Your biggest constraints, your highest-leverage automation opportunities, and actionable next steps specific to you that you can take.",
+      },
+      {
+        n: "04",
+        title: "Real Automation Examples Across Multiple Industries",
+        body: "You'll see where automation actually exists in business: across sales, operations, fulfillment, and marketing, so you can see exactly where it fits yours.",
+      },
+      {
+        n: "05",
+        title: "The Tools Worth Your Time and the Ones to Ignore",
+        body: "There's an overwhelming amount of tools. We cut through it and show you what's actually working right now.",
+      },
+    ],
+
+    walkawayProse: {
+      eyebrow: "The deliverable",
+      title: "What you walk away with",
+      paragraphs: [
+        "A custom automation plan built around your business: your bottlenecks identified, your top 3 to 5 highest-leverage automation opportunities prioritized, and your next steps clear.",
+        "**Not general advice. Not a worksheet to fill out later. A plan you helped build in the room.**",
+      ],
+    },
+
+    walkaway: [
+      "A prioritized automation plan built in the room with next steps you can use.",
+    ],
+
+    testimonialsIntro: {
+      eyebrow: "What people are saying",
+      title: "Hear from business owners",
+    },
+
+    testimonials: [
+      {
+        quote:
+          "It was the first time our technology felt like it was on our side. We stopped juggling vendors and started running our business.",
+        name: "VP of Operations",
+        role: "Upstate SC professional services firm",
+      },
+      {
+        quote:
+          "We did not want AI to replace our team. We wanted it to stop burning our team on work a machine should do. That is exactly what we got.",
+        name: "Managing Partner",
+        role: "Greenville services firm",
+      },
+    ],
+
+    footerCta: {
+      eyebrow: "Seats are limited",
+      title: "Click below to secure your seat",
+      buttonLabel: "I'm ready to scale",
+      detailLine:
+        "Wednesday, May 27, 2026 · 11:30 AM – 1:00 PM · ROAM, Greenville, SC",
+    },
+
+    rsvp: {
+      mode: "native-form",
+      fields: ["name", "email", "company", "source", "focusArea"],
+      successTitle: "You are on the list",
+      successMessage:
+        "We will email a calendar invite and venue details as the date gets closer. If plans change, just reply to that email.",
+    },
+
+    ogImage: "/scaleup/greenville/may-27-2026/roam.jpg",
+  },
+  {
+    city: "greenville",
+    cityDisplay: "Greenville",
+    slug: "may-7-2026",
+    status: "past",
 
     audienceLabel: "ATTN: Greenville business owners",
     headline: {
