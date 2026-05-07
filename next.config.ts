@@ -25,8 +25,13 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/gvl",
-        destination: "/scaleup/greenville/may-7-2026",
-        permanent: false,
+        destination: "/scaleup/greenville",
+        permanent: true,
+      },
+      {
+        source: "/scaleup/:city/:event",
+        destination: "/scaleup/:city",
+        permanent: true,
       },
     ];
   },

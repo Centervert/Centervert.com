@@ -42,29 +42,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const scaleUpCityHubs: MetadataRoute.Sitemap = Array.from(
+  const scaleUpCityPages: MetadataRoute.Sitemap = Array.from(
     new Set(scaleUpEvents.map((e) => e.city))
   ).map((city) => ({
     url: `${baseUrl}/scaleup/${city}`,
     lastModified: now,
     changeFrequency: "weekly",
-    priority: 0.85,
+    priority: 0.9,
   }));
-
-  const scaleUpEventPages: MetadataRoute.Sitemap = scaleUpEvents
-    .filter((e) => e.status !== "draft")
-    .map((e) => ({
-      url: `${baseUrl}/scaleup/${e.city}/${e.slug}`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    }));
 
   return [
     ...staticPages,
     ...servicePages,
     ...caseStudyPages,
-    ...scaleUpCityHubs,
-    ...scaleUpEventPages,
+    ...scaleUpCityPages,
   ];
 }

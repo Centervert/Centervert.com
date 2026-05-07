@@ -1,12 +1,13 @@
 /**
- * Scale Up events: city + event-slug addressable, config-driven.
+ * Scale Up events: config-driven, surfaced through /scaleup/[city].
  *
- * Event landing pages are rendered from these records at
- * /scaleup/[city]/[slug]. Add a new event by pushing a new object. Each city's
- * hub (/scaleup/[city]) surfaces the next `upcoming` event.
+ * The city page (/scaleup/[city]) always renders whichever event for that city
+ * has `status: "upcoming"` (via findNextEventForCity). Past events surface as
+ * recap cards at the bottom of the same page. Dated URLs do not exist; old
+ * /scaleup/[city]/[slug] paths 301 to /scaleup/[city] (see next.config.ts).
  *
  * Notes:
- * - `status: "upcoming"` is what shows on city hubs and enables RSVP.
+ * - `status: "upcoming"` is what hydrates the city page and enables RSVP.
  * - `rsvpMode: "native-form"` renders the in-page form. When Luma/Eventbrite
  *   go live for a given event, switch to `"external-url"` and set `rsvpUrl`.
  * - `video` is optional; when omitted the event page renders a placeholder.
