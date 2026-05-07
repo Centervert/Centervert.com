@@ -70,7 +70,7 @@ export function EventVideo({ event }: Props) {
       <MP4Player
         src={video.src}
         srcWebm={video.srcWebm}
-        sourceMimeType={video.kind === "mov" ? "video/quicktime" : "video/mp4"}
+        sourceMimeType="video/mp4"
         poster={poster}
         aspectClass={aspectClass}
         autoplayMuted={video.autoplayMuted ?? true}
@@ -100,8 +100,7 @@ export function EventVideo({ event }: Props) {
 type MP4Props = {
   src: string;
   srcWebm?: string;
-  /** MIME type for the primary `<source>` (QuickTime for hosted `.mov`). */
-  sourceMimeType: "video/mp4" | "video/quicktime";
+  sourceMimeType: "video/mp4";
   poster: string;
   aspectClass: string;
   autoplayMuted: boolean;
