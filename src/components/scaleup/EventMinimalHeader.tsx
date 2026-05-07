@@ -6,12 +6,12 @@ import { Container } from "@/components/ui/Container";
  * The only action on the page is RSVP. Logo links to "/" for users who want
  * to explore Centervert before deciding.
  */
-export function EventMinimalHeader() {
+export function EventMinimalHeader({ logoHeight = 26 }: { logoHeight?: number } = {}) {
   return (
     <header className="absolute inset-x-0 top-0 z-20 pt-6 md:pt-8">
       <Container size="wide">
         <div className="flex items-center justify-center">
-          <Logo variant="horizontal" color="smoke" height={26} />
+          <Logo variant="horizontal" color="smoke" height={logoHeight} />
         </div>
       </Container>
     </header>
