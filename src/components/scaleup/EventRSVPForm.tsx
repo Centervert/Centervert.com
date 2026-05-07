@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, CheckCircle2, ExternalLink, Loader2 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
@@ -30,6 +31,7 @@ const sources = [
 
 export function EventRSVPForm({ event, tone = "light" }: Props) {
   const headingId = useId();
+  const router = useRouter();
   const [state, setState] = useState<SubmitState>({ kind: "idle" });
 
   if (event.rsvp.mode === "external-url") {
@@ -104,7 +106,7 @@ export function EventRSVPForm({ event, tone = "light" }: Props) {
         return;
       }
 
-      form.reset();
+      router.push(`/${event.city}/snupty`);
       setState({ kind: "success" });
     } catch {
       setState({
