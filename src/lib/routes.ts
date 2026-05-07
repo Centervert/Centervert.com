@@ -18,8 +18,7 @@ export const routes = {
   scaleUp: "/scaleup",
   scaleUpEvents: "/scaleup#events",
   scaleUpCity: (city: string) => `/scaleup/${city}`,
-  scaleUpEvent: (city: string, eventSlug: string) => `/scaleup/${city}/${eventSlug}`,
-  /** Short ad URL; redirects to the current Greenville event (see next.config.ts). */
+  /** Short ad URL; redirects to /scaleup/greenville (see next.config.ts). */
   scaleUpShortGvl: "/gvl",
   services: {
     index: "/#services",
