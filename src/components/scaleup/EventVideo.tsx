@@ -122,15 +122,31 @@ function MP4Player({
 
   useEffect(() => {
     const v = ref.current;
-    if (!v || !autoplayMuted) return;
-    v.muted = true;
-    const tryPlay = () => {
+    if (!v) return;
+    if (autoplayMuted) {
+      v.muted = true;
       v.play().catch(() => {
         // Some mobile browsers still block even muted autoplay until gesture.
         // The overlay handles that case: tapping plays + unmutes.
       });
-    };
-    tryPlay();
+    }
+
+    // Pause when scrolled offscreen so we are not decoding 1080p H.264 while
+    // the user is reading 5 sections down — that competes with scroll for GPU.
+    let wasPlaying = autoplayMuted;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (wasPlaying) v.play().catch(() => {});
+        } else {
+          wasPlaying = !v.paused;
+          v.pause();
+        }
+      },
+      { threshold: 0.1 },
+    );
+    observer.observe(v);
+    return () => observer.disconnect();
   }, [autoplayMuted]);
 
   const handleUnmute = () => {
